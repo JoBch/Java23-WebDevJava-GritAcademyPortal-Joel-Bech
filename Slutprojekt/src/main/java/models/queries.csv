@@ -1,0 +1,8 @@
+allFromStudenter;SELECT id, fname, lname, town, hobby FROM students ORDER BY id ASC;gritacademy;localhost;3307;Admin;Password
+insertIntoCourses;INSERT INTO `courses` (`id`, `name`, `YHP`, `description`) VALUES (NULL, ?, ?, ?);gritacademy;localhost;3307c;Admin;Password
+selectAllFromCourses;SELECT * FROM Courses;gritacademy;localhost;3307;Admin;Password
+insertintoStudents;INSERT INTO `students` (`id`, `fname`, `lname`, `town`, `hobby`) VALUES (NULL, ?, ?, ?, ?);gritacademy;localhost;3307;Admin;Password
+selectAllFromStudents;SELECT * FROM Students;gritacademy;localhost;3307;Admin;Password
+selectStudentCourses;SELECT s.fname, s.lname, c.name AS coursename, c.YHP, c.description FROM students s JOIN students_courses sc ON sc.studentsid = s.id JOIN courses c ON a.coursesid = c.id WHERE s.fname = '{0}' AND s.lname = '{1}';gritacademy;localhost;3307;Admin;Password
+insertIntoAttendanceStudent;INSERT INTO attendance (studentsid, coursesid) SELECT s.id AS studentsid, c.id AS subjectsid FROM students s JOIN courses c ON s.fname = ? AND s.lname = ? AND c.name = ?;gritacademy;localhost;3307;Admin;Password
+insertIntoAttendanceTeacher;INSERT INTO attendance (teachersid, coursesid) SELECT t.id AS teachersid, c.id AS subjectsid FROM teachers t JOIN courses c ON s.fname = ? AND s.lname = ? AND c.name = ?;gritacademy;localhost;3307;Admin;Password

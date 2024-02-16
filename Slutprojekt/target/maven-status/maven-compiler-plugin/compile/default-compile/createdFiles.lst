@@ -1,0 +1,9 @@
+Servlets\AddStudentServlet.class
+Servlets\AttendanceServlet.class
+Servlets\EnrollServlet.class
+org\Slutprojekt\JAXRSConfiguration.class
+Servlets\LoginServlet.class
+models\JavaBean.class
+models\MySQLConnector.class
+Servlets\AddCourseServlet.class
+org\Slutprojekt\resources\JavaEE8Resource.class
