@@ -26,5 +26,23 @@
     </select>
     <input name="login" type="submit">
 </form>
+<table class="table">
+    <c:forEach items="${coursesBean.data}" var="dataPunkt" varStatus="loop">
+        <c:if test="${loop.index == 0}">
+            <tr>
+                <c:forEach items="${dataPunkt}" var="columnName">
+                    <th>${columnName}</th>
+                </c:forEach>
+            </tr>
+        </c:if>
+        <c:if test="${loop.index != 0}">
+            <tr>
+                <c:forEach items="${dataPunkt}" var="columnValue">
+                    <td>${columnValue}</td>
+                </c:forEach>
+            </tr>
+        </c:if>
+    </c:forEach>
+</table>
 </body>
 </html>

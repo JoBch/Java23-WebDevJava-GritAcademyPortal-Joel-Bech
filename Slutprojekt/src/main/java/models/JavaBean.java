@@ -21,10 +21,11 @@ public class JavaBean implements Serializable {
             this.stateType=stateType;
     }
 
+    public JavaBean() {}
+
     public List<String[]> getData() {
         return data;
     }
-
     public void setData(List<String[]> data) {
         this.data = data;
     }

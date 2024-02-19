@@ -18,7 +18,7 @@ public class EnrollServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-            /*LinkedList<String[]> data = MySQLConnector.getConnector().selectQuery("selectAllFromStudents");
+/*            LinkedList<String[]> data = MySQLConnector.getConnector().selectQuery("selectAllFromStudents");
             JavaBean usersBean = new JavaBean(id, fname, lname, username, password);
             usersBean.setData(data);
 

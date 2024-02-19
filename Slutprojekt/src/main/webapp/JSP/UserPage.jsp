@@ -35,11 +35,11 @@
 
 <%--Denna biten är lite magisk och jag förstår mig inte riktigt på den men den är cool som fan. Skapar dynamiskt ALLA headers till vårt table
 och populerar dem med data därefter.--%>
-<%--<body>
+<body>
 <h1>Hello World from Show Students!</h1>
 <h3>${param.message}</h3>
 <table class="table">
-    <c:forEach items="${usersBean.data}" var="dataPunkt" varStatus="loop">
+    <c:forEach items="${userBean.data}" var="dataPunkt" varStatus="loop">
         <c:if test="${loop.index == 0}">
             <tr>
                 <c:forEach items="${dataPunkt}" var="columnName">
@@ -56,26 +56,31 @@ och populerar dem med data därefter.--%>
         </c:if>
     </c:forEach>
 </table>
+<form action="/Attendance" method="post">
+    First name: <input name="fname" type="text">
+    Last name: <input name="lname" type="password">
+    <input name="displayTable" type="submit">
+</form>
 </body>
-</html>--%>
+</html>
 
 <%--Denna biten är lite magisk men den är ännu coolare som fan. Skapar dynamiskt headers som vi väljer till vårt table och populerar dem.
 Alltså baserat på svaret vi från DB så plockar den ut headers, av dessa kan vi välja vilka headerindex vi vill använda dynamiskt
 och sen dynamiskt fylla dessa. Egentligen ganska likt första utgåvan i detta dokumentet men coolare. Kanske om vi behöver
 plocka ut column 1,2,3,4 ur 3 olika tables men de har olika headers så funkar denna ändå.--%>
-<body>
+<%--<body>
 <h1>Hello World from Show Students!</h1>
 <h3>${param.message}</h3>
 <table class="table">
     <tr>
         <!-- Specify the specific column headers you want to include based on their indexes -->
-        <c:forEach items="${usersBean.data[0]}" var="columnName" varStatus="loop">
+        <c:forEach items="${userBean.data[0]}" var="columnName" varStatus="loop">
             <c:if test="${loop.index == 1 || loop.index == 2|| loop.index == 4|| loop.index == 5}">
                 <th>${columnName}</th>
             </c:if>
         </c:forEach>
     </tr>
-    <c:forEach items="${usersBean.data}" var="dataPunkt" varStatus="loop">
+    <c:forEach items="${userBean.data}" var="dataPunkt" varStatus="loop">
         <c:if test="${loop.index != 0}">
             <tr>
                 <!-- Access specific column values based on their indexes -->
@@ -103,5 +108,5 @@ plocka ut column 1,2,3,4 ur 3 olika tables men de har olika headers så funkar d
         </c:if>
     </c:forEach>
 </table>
-</body>
+</body>--%>
 </html>

@@ -12,7 +12,7 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="Slutprojekt" options="-endorseddirs &quot;C:\Users\Andreas\Desktop\Skola 2023-2025\Webutveckling med Java\Java23-WebDevJava-GritAcademyPortal-Joel-Bech\Slutprojekt\target/endorsed&quot;" />
+      <module name="Slutprojekt" options="-endorseddirs C:\Users\joelb\OneDrive\Skrivbord\Java23-WebDevJava-GritAcademyPortal-Joel-Bech\Slutprojekt\target/endorsed" />
     </option>
   </component>
 </project>
