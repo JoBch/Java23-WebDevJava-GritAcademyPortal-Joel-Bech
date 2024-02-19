@@ -8,10 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 import java.io.IOException;
-import java.io.PrintWriter;
-import java.sql.*;
 import java.util.LinkedList;
 
 @WebServlet("/Enroll")
@@ -21,20 +18,20 @@ public class EnrollServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-            LinkedList<String[]> data = MySQLConnector.getConnector().selectQuery("selectAllFromStudents");
-            JavaBean usersBean = new JavaBean();
+            /*LinkedList<String[]> data = MySQLConnector.getConnector().selectQuery("selectAllFromStudents");
+            JavaBean usersBean = new JavaBean(id, fname, lname, username, password);
             usersBean.setData(data);
 
             request.getSession().setAttribute("usersBean", usersBean);
             System.out.println(((JavaBean)(request.getSession().getAttribute("usersBean"))).getData());
 
             LinkedList<String[]> data1 = MySQLConnector.getConnector().selectQuery("selectAllFromCourses");
-            JavaBean usersBean1 = new JavaBean();
+            JavaBean usersBean1 = new JavaBean(id, fname, lname, username, password);
             usersBean1.setData1(data1);
 
             request.getSession().setAttribute("coursesBean", usersBean1);
             System.out.println(((JavaBean)(request.getSession().getAttribute("coursesBean"))).getData1());
-            request.getRequestDispatcher("JSP/UserPage.jsp").forward(request, response);
+            request.getRequestDispatcher("JSP/UserPage.jsp").forward(request, response);*/
 
     }
 

@@ -10,7 +10,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Title</title>
+    <title>Enroll student</title>
     <%@include file="HeaderLinks.jsp"%>
     <link rel="stylesheet" href="../CSS/Style.css">
 </head>

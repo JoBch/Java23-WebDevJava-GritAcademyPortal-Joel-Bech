@@ -18,8 +18,12 @@
 <form action="/login" method="post">
     Username: <input name="username" type="text">
     <br>
-    Password: <input name="password" type="password">
-    <br><br>
+    Password: <input name="password" type="password"><br><br>
+    <label for="user_type">Choose a user type:</label>
+    <select id="user_type" name="user_type">
+        <option value="student">Student</option>
+        <option value="teacher">Teacher</option>
+    </select>
     <input name="login" type="submit">
 </form>
 </body>

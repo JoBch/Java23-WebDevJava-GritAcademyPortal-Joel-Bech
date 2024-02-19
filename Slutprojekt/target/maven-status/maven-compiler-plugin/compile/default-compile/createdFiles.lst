@@ -1,9 +1,12 @@
+models\USER_TYPE.class
 Servlets\AddStudentServlet.class
 Servlets\AttendanceServlet.class
-Servlets\EnrollServlet.class
 org\Slutprojekt\JAXRSConfiguration.class
+models\MySQLConnector.class
+org\Slutprojekt\resources\JavaEE8Resource.class
+models\STATE_TYPE.class
+models\PRIVILEGE_TYPE.class
+Servlets\EnrollServlet.class
 Servlets\LoginServlet.class
 models\JavaBean.class
-models\MySQLConnector.class
 Servlets\AddCourseServlet.class
-org\Slutprojekt\resources\JavaEE8Resource.class

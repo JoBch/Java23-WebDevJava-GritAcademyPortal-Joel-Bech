@@ -1,5 +1,8 @@
 package Servlets;
 
+import models.JavaBean;
+import models.MySQLConnector;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -9,22 +12,24 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.*;
+import java.util.LinkedList;
 
 @WebServlet("/Courses")
 public class AddCourseServlet extends HttpServlet {
 
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-        PrintWriter out = response.getWriter();
+        req.getRequestDispatcher("JSP/Courses.jsp").forward(req, resp);
+       /* resp.setContentType("text/html;charset=UTF-8");
+        PrintWriter out = resp.getWriter();
 
         try {
             //Anslut till databasen och hämta data
             Class.forName("com.mysql.cj.jdbc.Driver");
-            String url = "jdbc:mysql://localhost:3307/gritacademy";
+            String url = "jdbc:mysql://localhost:3350/gritacademy";
 
-            HttpSession session = request.getSession(false);
+            HttpSession session = req.getSession(false);
             String user = (String) session.getAttribute("username");
             String password = (String) session.getAttribute("password");
             Connection connection = DriverManager.getConnection(url, user, password);
@@ -62,21 +67,28 @@ public class AddCourseServlet extends HttpServlet {
 
         } catch (Exception e) {
             //redirection back to index.html (the login page), in a perfect world maybe check the inputs before this
-            response.sendRedirect("/index.html");
+            resp.sendRedirect("/index.html");
             System.out.println(e.getMessage());
             out.println("<p><span style= \"background-color:red\">Error: " + e.getMessage() + "</span></p>");
         } finally {
             out.close();
-        }
+        }*/
     }
 
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        PrintWriter out = resp.getWriter();
+
+        req.getRequestDispatcher("JSP/UserPage.jsp").forward(req, resp);
+        String name = req.getParameter("name");
+        String yhp = req.getParameter("yhp");
+        String description = req.getParameter("description");
+        System.out.println("Kurs: " + name + ", YHP= " + yhp + ", innehåller " + description);
+
+        /*PrintWriter out = resp.getWriter();
         resp.setContentType("text/html;charset=UTF-8");
 
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            String url = "jdbc:mysql://localhost:3307/gritacademy";
+            String url = "jdbc:mysql://localhost:3350/gritacademy";
 
             HttpSession session = req.getSession(false);
             String user = (String) session.getAttribute("username");
@@ -146,6 +158,6 @@ public class AddCourseServlet extends HttpServlet {
             out.println("<p><span style= \"background-color:red\">Error: " + e.getMessage() + "</span></p>");
         } finally {
             out.close();
-        }
+        }*/
     }
 }

@@ -9,11 +9,25 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Title</title>
-    <%@include file="HeaderLinks.jsp"%>
+    <title>Kurser</title>
     <link rel="stylesheet" href="../CSS/Style.css">
 </head>
 <body>
+<!--
+<%@include file="HeaderLinks.jsp"%>
+-->
+<%@include file="navbar.jsp"%>
+<%@include file="Footer.jsp"%>
+<form id="addStudent" action=Courses method=POST>
+    <label for="name">Skriv in kursens namn:</label><br>
+    <input type=text id=name name=name required><br>
+    <label for=yhp>Skriv in Yrkeshögskolepoäng:</label><br>
+    <input type=text id=yhp name=yhp required><br>
+    <label for=description>Vad innehåller kursen?</label><br>
+    <input type=text id=description name=description required><br>
+
+    <input type=submit value=Submit>
+</form>
 
 </body>
 </html>
