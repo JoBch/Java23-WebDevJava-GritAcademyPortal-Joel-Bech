@@ -1,19 +1,19 @@
 a:hover {
-    color: black;
-    transform: scale(1.2);
+    color: #737373;
+    transform: scale(1.1);
 }
 
 a:active {
     text-decoration: line-through;
-    color: black;
+    color: #737373;
 }
 
 a:focus {
-    color: black;
+    color: rgb(244,204,204);
 }
 
 a:visited {
-    color: rgb(255, 0, 0);
+    color: rgb(244,204,204);
 }
 
 body {
@@ -33,26 +33,25 @@ body {
     border: solid 2px;
 }
 
-.mainNavbar {
+.mainNavbarStudent {
     display: flex;
-    min-height: 100px;
-    max-height: 150px;
-    background-color: beige;
+    min-height: 80px;
+    max-height: 120px;
+    padding-bottom: 20px;
+    background-color: #26272b;
     justify-content: space-around;
     align-content: space-around;
     flex-direction: row;
-    border: solid 2px;
-    border-color: black;
+    <!--border: 2px solid black;-->
 }
-.footer {
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    background-color: red;
-    color: black;
-    text-align: center;
+.navBarTitle {
+    color: #737373;
 }
+.navBarLinks{
+    color: #737373;
+}
+
+
 .table {
     margin-left: auto;
     margin-right: auto;

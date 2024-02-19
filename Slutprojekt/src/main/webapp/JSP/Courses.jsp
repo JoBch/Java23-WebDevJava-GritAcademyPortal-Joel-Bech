@@ -16,8 +16,8 @@
 <!--
 <%@include file="HeaderLinks.jsp"%>
 -->
-<%@include file="navbar.jsp"%>
-<%@include file="Footer.jsp"%>
+<%@include file="NavbarStudent.jsp"%>
+
 <form id="addStudent" action=Courses method=POST>
     <label for="name">Skriv in kursens namn:</label><br>
     <input type=text id=name name=name required><br>
@@ -28,6 +28,6 @@
 
     <input type=submit value=Submit>
 </form>
-
+<%@include file="Footer.jsp"%>
 </body>
 </html>

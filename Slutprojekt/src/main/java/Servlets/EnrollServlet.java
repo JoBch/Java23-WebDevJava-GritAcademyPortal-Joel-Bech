@@ -31,7 +31,7 @@ public class EnrollServlet extends HttpServlet {
 
             request.getSession().setAttribute("coursesBean", usersBean1);
             System.out.println(((JavaBean)(request.getSession().getAttribute("coursesBean"))).getData1());
-            request.getRequestDispatcher("JSP/UserPage.jsp").forward(request, response);*/
+            request.getRequestDispatcher("JSP/UserPageStudent.jsp").forward(request, response);*/
 
     }
 
