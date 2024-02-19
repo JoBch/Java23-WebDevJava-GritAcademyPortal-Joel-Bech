@@ -35,11 +35,11 @@
 
 <%--Denna biten är lite magisk och jag förstår mig inte riktigt på den men den är cool som fan. Skapar dynamiskt ALLA headers till vårt table
 och populerar dem med data därefter.--%>
-<%--<body>
+<body>
 <h1>Hello World from Show Students!</h1>
 <h3>${param.message}</h3>
 <table class="table">
-    <c:forEach items="${usersBean.data}" var="dataPunkt" varStatus="loop">
+    <c:forEach items="${userBean.data}" var="dataPunkt" varStatus="loop">
         <c:if test="${loop.index == 0}">
             <tr>
                 <c:forEach items="${dataPunkt}" var="columnName">
@@ -57,13 +57,13 @@ och populerar dem med data därefter.--%>
     </c:forEach>
 </table>
 </body>
-</html>--%>
+</html>
 
 <%--Denna biten är lite magisk men den är ännu coolare som fan. Skapar dynamiskt headers som vi väljer till vårt table och populerar dem.
 Alltså baserat på svaret vi från DB så plockar den ut headers, av dessa kan vi välja vilka headerindex vi vill använda dynamiskt
 och sen dynamiskt fylla dessa. Egentligen ganska likt första utgåvan i detta dokumentet men coolare. Kanske om vi behöver
 plocka ut column 1,2,3,4 ur 3 olika tables men de har olika headers så funkar denna ändå.--%>
-<body>
+<%--<body>
 <h1>Hello World from Show Students!</h1>
 <h3>${param.message}</h3>
 <table class="table">
@@ -104,4 +104,4 @@ plocka ut column 1,2,3,4 ur 3 olika tables men de har olika headers så funkar d
     </c:forEach>
 </table>
 </body>
-</html>
+</html>--%>
