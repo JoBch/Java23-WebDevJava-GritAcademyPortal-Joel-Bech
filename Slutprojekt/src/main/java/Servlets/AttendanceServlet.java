@@ -50,7 +50,7 @@ public class AttendanceServlet extends HttpServlet {
         userBean.setData(data);
 
         req.getSession().setAttribute("userBean", userBean);
-        req.getRequestDispatcher("JSP/UserPage.jsp").forward(req, resp);
+        req.getRequestDispatcher("JSP/UserPageStudent.jsp").forward(req, resp);
 
     }
 
