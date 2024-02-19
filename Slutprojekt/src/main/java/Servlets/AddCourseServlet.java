@@ -77,7 +77,7 @@ public class AddCourseServlet extends HttpServlet {
 
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-        req.getRequestDispatcher("JSP/UserPage.jsp").forward(req, resp);
+        req.getRequestDispatcher("JSP/UserPageStudent.jsp").forward(req, resp);
         String name = req.getParameter("name");
         String yhp = req.getParameter("yhp");
         String description = req.getParameter("description");
