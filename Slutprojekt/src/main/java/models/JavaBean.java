@@ -9,9 +9,7 @@ public class JavaBean implements Serializable {
     private USER_TYPE userType;
     private PRIVILEGE_TYPE privilegeType = PRIVILEGE_TYPE.user;
     private STATE_TYPE stateType = STATE_TYPE.anonymous;
-
     private List<String[]> data = null;
-    private List<String[]> data1 = null;
 
 
     public JavaBean(String id, USER_TYPE userType, PRIVILEGE_TYPE privilegeType, STATE_TYPE stateType){
@@ -29,13 +27,7 @@ public class JavaBean implements Serializable {
     public void setData(List<String[]> data) {
         this.data = data;
     }
-    public List<String[]> getData1() {
-        return data1;
-    }
 
-    public void setData1(List<String[]> data1) {
-        this.data1 = data1;
-    }
     public void setId(String id) {
         this.id = id;
     }

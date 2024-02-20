@@ -33,12 +33,16 @@ public class AttendanceServlet extends HttpServlet {
         String fname = req.getParameter("fname");
         String lname = req.getParameter("lname");
 
-        LinkedList<String[]> data = MySQLConnector.getConnector().selectQuery("selectStudentCourses", fname, lname);
+        LinkedList<String[]> data = MySQLConnector.getConnector().selectQuery("selectStudentCoursesWhere", fname, lname);
         JavaBean userBean = new JavaBean();
         userBean.setData(data);
 
         req.getSession().setAttribute("userBean", userBean);
+<<<<<<< Updated upstream
         req.getRequestDispatcher("JSP/UserPageTeacher.jsp").forward(req, resp);*/
+=======
+        req.getRequestDispatcher("JSP/UserPageTeacher.jsp").forward(req, resp);
+>>>>>>> Stashed changes
 
     }
 

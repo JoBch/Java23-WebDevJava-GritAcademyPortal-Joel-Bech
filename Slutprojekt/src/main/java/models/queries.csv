@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 insertIntoCourses;INSERT INTO `courses` (`id`, `name`, `YHP`, `description`) VALUES (NULL, ?, ?, ?);gritacademy;localhost;3350;Admin;Password
 selectAllFromCourses;SELECT * FROM Courses;gritacademy;localhost;3350;Admin;Password
 insertIntoStudents;INSERT INTO `students` (`id`, `fname`, `lname`, `town`, `hobby`) VALUES (NULL, ?, ?, ?, ?);gritacademy;localhost;3350;Admin;Password
@@ -8,3 +9,35 @@ insertIntoTeachersCourses;INSERT INTO teachers_courses (teachersid, coursesid) S
 selectAllFromStudentsWhereUsername; SELECT * FROM students WHERE username = ?;gritacademy;localhost;3350;Admin;Password
 studentsLogin;SELECT s.id AS student_id, s.fname AS student_fname, s.lname AS student_lname, t.id AS teacher_id, t.fname AS teacher_fname, t.lname AS teacher_lname, c.id AS course_id, c.name AS course_name FROM students s JOIN students_courses sc ON s.id = sc.studentsid JOIN courses c ON sc.coursesid = c.id LEFT JOIN teachers_courses tc ON c.id = tc.coursesid LEFT JOIN teachers t ON tc.teachersid = t.id WHERE c.id IN (SELECT coursesid FROM students_courses WHERE studentsid = (SELECT id FROM students WHERE username = '{0}' AND password = '{1}')) ORDER BY s.id;gritacademy;localhost;3350;Admin;Password
 teachersLogin;SELECT 'Students' AS source, id, fname, lname, town, hobby, email, phone FROM students UNION ALL SELECT 'Courses' AS source, id, name, YHP, description, NULL, NULL, NULL FROM courses ORDER BY source;gritacademy;localhost;3350;Admin;Password
+=======
+allFromStudents;SELECT * FROM students;gritacademy;localhost;3307;Admin;Password
+allFromTeachers;SELECT * FROM teachers;gritacademy;localhost;3307;Admin;Password
+allFromCourses;SELECT * FROM courses;gritacademy;localhost;3307;Admin;Password
+
+selectStudentCoursesWhere;SELECT s.fname, s.lname, c.name AS coursename, c.YHP, c.description FROM students s JOIN students_courses sc ON sc.studentsid = s.id JOIN courses c ON sc.coursesid = c.id WHERE s.fname = '{0}' AND s.lname = '{1}';gritacademy;localhost;3307;Admin;Password
+selectTeachersCoursesWhere;SELECT s.fname, s.lname, c.name AS coursename, c.YHP, c.description FROM teachers t JOIN teachers_courses tc ON tc.teachersid = t.id JOIN courses c ON tc.coursesid = c.id WHERE t.fname = '{0}' AND t.lname = '{1}';gritacademy;localhost;3307;Admin;Password
+
+selectTeachersCourses;SELECT t.fname, t.lname, c.name AS coursename, c.YHP, c.description FROM teachers t JOIN teachers_courses tc ON tc.teachersid = t.id JOIN courses c ON tc.coursesid = c.id;gritacademy;localhost;3307;Admin;Password
+selectStudentsCourses;SELECT s.fname, s.lname, c.name AS coursename, c.YHP, c.description FROM students s JOIN students_courses sc ON sc.studentsid = s.id JOIN courses c ON sc.coursesid = c.id ;gritacademy;localhost;3307;Admin;Password
+
+selectAllFromStudentsWhereUsername; SELECT * FROM students WHERE username = ?;gritacademy;localhost;3307;Admin;Password
+
+studentsLogin;SELECT s.id AS student_id, s.fname AS student_fname, s.lname AS student_lname, t.id AS teacher_id, t.fname AS teacher_fname, t.lname AS teacher_lname, c.id AS course_id, c.name AS course_name FROM students s JOIN students_courses sc ON s.id = sc.studentsid JOIN courses c ON sc.coursesid = c.id LEFT JOIN teachers_courses tc ON c.id = tc.coursesid LEFT JOIN teachers t ON tc.teachersid = t.id WHERE c.id IN (SELECT coursesid FROM students_courses WHERE studentsid = (SELECT id FROM students WHERE username = '{0}' AND password = '{1}')) ORDER BY s.id;gritacademy;localhost;3307;Admin;Password
+teachersLogin;SELECT 'Students' AS source, id, fname, lname, town, hobby, email, phone FROM students UNION ALL SELECT 'Courses' AS source, id, name, YHP, description, NULL, NULL, NULL FROM courses ORDER BY source;gritacademy;localhost;3307;Admin;Password
+
+studentLogin;Select * FROM students s WHERE s.username='{0}' AND s.password='{1}';gritacademy;localhost;3307;Admin;Password
+teacherLogin;Select * FROM teachers t WHERE t.username='{0}' AND t.password='{1}';gritacademy;localhost;3307;Admin;Password
+
+deleteFromStudents;DELETE FROM students WHERE id=?;gritacademy;localhost;3307;Admin;Password
+deleteFromTeachers;DELETE FROM teachers WHERE id=?;gritacademy;localhost;3307;Admin;Password
+deleteFromCourses;DELETE FROM courses WHERE id=?;gritacademy;localhost;3307;Admin;Password
+deleteFromStudentCourses;DELETE FROM students_courses WHERE id=?;gritacademy;localhost;3307;Admin;Password
+deleteFromTeachersCourses;DELETE FROM teachers_courses WHERE id=?;gritacademy;localhost;3307;Admin;Password
+
+
+insertIntoCourses;INSERT INTO `courses`(`id`, `name`, `YHP`, `description`) VALUES (NULL ,?, ?, ?);gritacademy;localhost;3307;Admin;Password
+insertIntoStudents;INSERT INTO `students`(`id`, `fname`, `lname`, `town`, `hobby`, `email`, `phone`, `username`, `password`) VALUES (NULL, ?, ?, ?, ?, ?, ?, ?, ?);gritacademy;localhost;3307;Admin;Password
+insertIntoTeachers;INSERT INTO `teachers`(`id`, `fname`, `lname`, `town`, `email`, `phone`, `username`, `password`, `privilage_type`) VALUES (NULL, ?, ?, ?, ?, ?, ?, ?, ?);gritacademy;localhost;3307;Admin;Password
+insertIntoStudentsCourses;INSERT INTO students_courses (studentsid, coursesid) SELECT s.id AS studentsid, c.id AS subjectsid FROM students s JOIN courses c ON s.fname = ? AND s.lname = ? AND c.name = ?;gritacademy;localhost;3307;Admin;Password
+insertIntoTeachersCourses;INSERT INTO teachers_courses (teachersid, coursesid) SELECT t.id AS teachersid, c.id AS subjectsid FROM teachers t JOIN courses c ON t.fname = ? AND t.lname = ? AND c.name = ?;gritacademy;localhost;3307;Admin;Password
+>>>>>>> Stashed changes

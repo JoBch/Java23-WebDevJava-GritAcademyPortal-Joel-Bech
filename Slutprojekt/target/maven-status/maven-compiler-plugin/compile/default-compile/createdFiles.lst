@@ -1,12 +1,13 @@
 models\USER_TYPE.class
-Servlets\AddStudentServlet.class
 Servlets\AttendanceServlet.class
+Servlets\ShowtablesServlet.class
+Servlets\AddToTablesServlet.class
 org\Slutprojekt\JAXRSConfiguration.class
 models\MySQLConnector.class
+Servlets\DeleteFromTablesServlet.class
 org\Slutprojekt\resources\JavaEE8Resource.class
 models\STATE_TYPE.class
 models\PRIVILEGE_TYPE.class
-Servlets\EnrollServlet.class
+Servlets\LogoutServlet.class
 Servlets\LoginServlet.class
 models\JavaBean.class
-Servlets\AddCourseServlet.class

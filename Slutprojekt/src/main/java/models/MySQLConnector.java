@@ -97,26 +97,26 @@ public class MySQLConnector {
      * ?,?,?,? for 4 input parameters. Args should be defined as:
      * argument0, argument1, argument2, argument4, S, S, S, S for 4 arguments of Type S
      * "I" should be used for type if its an integer
+     *
      * @param queryName
      * @param args
-     * @return
      * @throws NullPointerException
      */
-    public boolean insertQuery(String queryName, String... args) throws NullPointerException{
+    public void insertQuery(String queryName, String... args) throws NullPointerException{
         try(BufferedReader br = new BufferedReader(new FileReader(queriesPath))) {
             String query = br.readLine();
             String[] line = null;
             while (query != null){
                 line = query.trim().split(";");
                 if(line[0].equals(queryName)){
-                    return insert(line[1], line[2], line[3], line[4], line[5], line[6], args);
+                    insert(line[1], line[2], line[3], line[4], line[5], line[6], args);
+                    return;
                 }
                 query = br.readLine();
             }
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-        return false;
     }
     private boolean insert(String query, String db, String ip, String port, String user, String password, String... args){
         try {

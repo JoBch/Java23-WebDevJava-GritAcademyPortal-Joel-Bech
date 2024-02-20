@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 C:\Users\Andreas\Desktop\Skola 2023-2025\Webutveckling med Java\Java23-WebDevJava-GritAcademyPortal-Joel-Bech\Slutprojekt\src\main\java\models\JavaBean.java
 C:\Users\Andreas\Desktop\Skola 2023-2025\Webutveckling med Java\Java23-WebDevJava-GritAcademyPortal-Joel-Bech\Slutprojekt\src\main\java\models\MySQLConnector.java
 C:\Users\Andreas\Desktop\Skola 2023-2025\Webutveckling med Java\Java23-WebDevJava-GritAcademyPortal-Joel-Bech\Slutprojekt\src\main\java\org\Slutprojekt\JAXRSConfiguration.java
@@ -10,3 +11,17 @@ C:\Users\Andreas\Desktop\Skola 2023-2025\Webutveckling med Java\Java23-WebDevJav
 C:\Users\Andreas\Desktop\Skola 2023-2025\Webutveckling med Java\Java23-WebDevJava-GritAcademyPortal-Joel-Bech\Slutprojekt\src\main\java\Servlets\AddCourseServlet.java
 C:\Users\Andreas\Desktop\Skola 2023-2025\Webutveckling med Java\Java23-WebDevJava-GritAcademyPortal-Joel-Bech\Slutprojekt\src\main\java\Servlets\EnrollServlet.java
 C:\Users\Andreas\Desktop\Skola 2023-2025\Webutveckling med Java\Java23-WebDevJava-GritAcademyPortal-Joel-Bech\Slutprojekt\src\main\java\org\Slutprojekt\resources\JavaEE8Resource.java
+=======
+C:\Users\joelb\OneDrive\Skrivbord\Java23-WebDevJava-GritAcademyPortal-Joel-Bech\Slutprojekt\src\main\java\models\JavaBean.java
+C:\Users\joelb\OneDrive\Skrivbord\Java23-WebDevJava-GritAcademyPortal-Joel-Bech\Slutprojekt\src\main\java\Servlets\AttendanceServlet.java
+C:\Users\joelb\OneDrive\Skrivbord\Java23-WebDevJava-GritAcademyPortal-Joel-Bech\Slutprojekt\src\main\java\Servlets\AddToTablesServlet.java
+C:\Users\joelb\OneDrive\Skrivbord\Java23-WebDevJava-GritAcademyPortal-Joel-Bech\Slutprojekt\src\main\java\models\STATE_TYPE.java
+C:\Users\joelb\OneDrive\Skrivbord\Java23-WebDevJava-GritAcademyPortal-Joel-Bech\Slutprojekt\src\main\java\Servlets\ShowtablesServlet.java
+C:\Users\joelb\OneDrive\Skrivbord\Java23-WebDevJava-GritAcademyPortal-Joel-Bech\Slutprojekt\src\main\java\models\USER_TYPE.java
+C:\Users\joelb\OneDrive\Skrivbord\Java23-WebDevJava-GritAcademyPortal-Joel-Bech\Slutprojekt\src\main\java\org\Slutprojekt\JAXRSConfiguration.java
+C:\Users\joelb\OneDrive\Skrivbord\Java23-WebDevJava-GritAcademyPortal-Joel-Bech\Slutprojekt\src\main\java\Servlets\LoginServlet.java
+C:\Users\joelb\OneDrive\Skrivbord\Java23-WebDevJava-GritAcademyPortal-Joel-Bech\Slutprojekt\src\main\java\Servlets\DeleteFromTablesServlet.java
+C:\Users\joelb\OneDrive\Skrivbord\Java23-WebDevJava-GritAcademyPortal-Joel-Bech\Slutprojekt\src\main\java\models\MySQLConnector.java
+C:\Users\joelb\OneDrive\Skrivbord\Java23-WebDevJava-GritAcademyPortal-Joel-Bech\Slutprojekt\src\main\java\org\Slutprojekt\resources\JavaEE8Resource.java
+C:\Users\joelb\OneDrive\Skrivbord\Java23-WebDevJava-GritAcademyPortal-Joel-Bech\Slutprojekt\src\main\java\models\PRIVILEGE_TYPE.java
+>>>>>>> Stashed changes
