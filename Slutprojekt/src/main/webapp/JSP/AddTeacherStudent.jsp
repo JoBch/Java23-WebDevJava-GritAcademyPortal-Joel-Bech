@@ -8,34 +8,56 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
+    <link rel="stylesheet" href="../CSS/Style.css">
     <title>Lägg till ny student eller lärare</title>
+
 </head>
 <body>
+<%@include file="NavBarTeacher.jsp"%>
 <h1>Hello User!</h1>
 <h5>Här kan du lägga till ny lärare eller student</h5>
-<form action="/Enroll" method="post">
-    <label for="user_type">Choose a user type:</label>
-    <select id="user_type" name="user_type">
-        <option value="student">Student</option>
-        <option value="teacher">Teacher</option>
-    </select><br>
-    <label for=fname>Förnamn</label>
-    <input name="fname" id="fname" type="text"><br>
-    <label for=lname>Efternamn</label>
-    <input name="lname" id="lname" type="text"><br>
-    <label for=town>Stad</label>
-    <input name="town" id="town" type="text"><br>
-    <label for=email>Email</label>
-    <input name="email" id="email" type="text"><br>
-    <label for=phone>Telefonnummer</label>
-    <input name="phone" id="phone" type="text"><br>
-    <label for=username>Username</label>
-    <input name="username" id="username" type="text"><br>
-    <label for=password>Lösenord</label>
-    <input name="password" id="password" type="text"><br>
-
+<div>
+<form class="AddForm" action="/Enroll" method="post">
+    <p class="ParagraphForm">
+        <label class="FormCell" for="user_type">Choose a user type:</label>
+        <select id="user_type" name="user_type">
+            <option value="student">Student</option>
+            <option value="teacher">Teacher</option>
+        </select><br>
+    </p>
+    <p class="ParagraphForm">
+        <label class="FormCell" for=fname>Förnamn</label>
+        <input class="FormCell" name="fname" id="fname" type="text"><br>
+    </p>
+    <p class="ParagraphForm">
+        <label class="FormCell" for=lname>Efternamn</label>
+        <input class="FormCell" name="lname" id="lname" type="text"><br>
+    </p>
+    <p class="ParagraphForm">
+        <label class="FormCell" for=town>Stad</label>
+        <input class="FormCell" name="town" id="town" type="text"><br>
+    </p>
+    <p class="ParagraphForm">
+        <label class="FormCell" class="FormCell" for=email>Email</label>
+        <input class="FormCell" class="FormCell" name="email" id="email" type="text"><br>
+    </p>
+    <p class="ParagraphForm">
+        <label class="FormCell" for=phone>Telefonnummer</label>
+        <input class="FormCell" name="phone" id="phone" type="text"><br>
+    </p>
+    <p class="ParagraphForm">
+        <label class="FormCell" for=username>Username</label>
+        <input class="FormCell" name="username" id="username" type="text"><br>
+    </p>
+    <p class="ParagraphForm">
+        <label class="FormCell" for=password>Lösenord</label>
+        <input class="FormCell" name="password" id="password" type="text"><br>
+    </p>
 
     <input name="login" type="submit">
+
 </form>
+</div>
+<%@include file="Footer.jsp"%>
 </body>
 </html>

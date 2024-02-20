@@ -26,6 +26,20 @@
     </select>
     <input name="login" type="submit">
 </form>
+
+
+<!--
+<tr>
+      <td>
+        <input value="1" id="type_radio_1" name="type_radio" type="radio" />
+      </td>
+      <td>
+        Data 1
+      </td>
+    </tr>
+    <tr>
+
+-->
 <table class="table">
     <c:forEach items="${coursesBean.data}" var="dataPunkt" varStatus="loop">
         <c:if test="${loop.index == 0}">

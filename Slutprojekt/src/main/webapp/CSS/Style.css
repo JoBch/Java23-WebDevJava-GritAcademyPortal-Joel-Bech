@@ -19,8 +19,16 @@ a:visited {
 body {
     background-color: lightcoral;
     color: black;
-    text-align: center;
     margin: 0;
+}
+.AddForm{
+    display: table;
+}
+.ParagraphForm{
+    display: table-row;
+}
+.FormCell{
+    display: table-cell;
 }
 
 .headerLinks {

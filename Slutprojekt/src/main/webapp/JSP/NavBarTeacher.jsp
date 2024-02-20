@@ -6,7 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<navbar class="mainNavbar">
+<navbar class="mainNavbarStudent">
     <banner>
         <h1>GRIT ACADEMY</h1>
         <!-- Vill vi få in namnet på den inloggade här i navbar titel kanske?-->

@@ -16,12 +16,19 @@ public class AttendanceServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
+        //req.getRequestDispatcher("JSP/DisplayStudents.jsp").forward(req, resp);
     }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-        resp.setContentType("text/html");
+
+
+        LinkedList<String[]> data = MySQLConnector.getConnector().selectQuery("allFromStudents");
+        req.setAttribute("data", data);
+        req.getRequestDispatcher("JSP/DisplayStudents.jsp").forward(req,resp);
+
+        /*resp.setContentType("text/html");
         //retrieving data from loginForm
         String fname = req.getParameter("fname");
         String lname = req.getParameter("lname");
@@ -31,7 +38,7 @@ public class AttendanceServlet extends HttpServlet {
         userBean.setData(data);
 
         req.getSession().setAttribute("userBean", userBean);
-        req.getRequestDispatcher("JSP/UserPageTeacher.jsp").forward(req, resp);
+        req.getRequestDispatcher("JSP/UserPageTeacher.jsp").forward(req, resp);*/
 
     }
 
