@@ -15,25 +15,6 @@ import java.util.LinkedList;
 public class AttendanceServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-/*
-        int id =-1;
-        String fname = "";
-        String lname = "";
-        String username = "";
-        String password = "";
-
-        LinkedList<String[]> data = MySQLConnector.getConnector().selectQuery("selectAllFromStudentsWhere" + );
-        JavaBean usersBean = new JavaBean(id, fname, lname, username, password);
-        usersBean.setData(data);
-
-
-        req.getSession().setAttribute("usersBean", usersBean);
-        System.out.println(((JavaBean)(req.getSession().getAttribute("usersBean"))).getData());
-        req.getRequestDispatcher("JSP/UserPage.jsp").forward(req, resp);*/
-/*
-        System.out.println(req.getParameter("JSP/Register.jsp"));
-        System.out.println(data);
-        System.out.println(req.getParameter("fname"));*/
 
     }
 
@@ -50,7 +31,7 @@ public class AttendanceServlet extends HttpServlet {
         userBean.setData(data);
 
         req.getSession().setAttribute("userBean", userBean);
-        req.getRequestDispatcher("JSP/UserPageStudent.jsp").forward(req, resp);
+        req.getRequestDispatcher("JSP/UserPageTeacher.jsp").forward(req, resp);
 
     }
 

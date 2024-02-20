@@ -36,7 +36,7 @@
 </table>
 <form action="/Attendance" method="post">
     First name: <input name="fname" type="text">
-    Last name: <input name="lname" type="password">
+    Last name: <input name="lname" type="text">
     <input name="showStudents" type="submit">
 </form>
 </body>

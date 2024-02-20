@@ -38,7 +38,9 @@
         <c:if test="${loop.index != 0}">
             <tr>
                 <c:forEach items="${dataPunkt}" var="columnValue">
-                    <td>${columnValue}</td>
+
+                    <td>${columnValue}
+                    </td>
                 </c:forEach>
             </tr>
         </c:if>
