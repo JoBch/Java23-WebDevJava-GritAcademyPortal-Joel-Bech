@@ -116,3 +116,15 @@
 0:0:0:0:0:0:0:1 - - [20/Feb/2024:14:41:19 +0100] "POST /login HTTP/1.1" 200 1276 http-bio-9090-exec-8 4
 0:0:0:0:0:0:0:1 - - [20/Feb/2024:14:42:32 +0100] "POST /login HTTP/1.1" 200 1928 http-bio-9090-exec-1 281
 >>>>>>> Stashed changes
+0:0:0:0:0:0:0:1 - - [20/Feb/2024:14:59:29 +0100] "GET /style.css HTTP/1.1" 404 969 http-bio-9090-exec-1 20
+0:0:0:0:0:0:0:1 - - [20/Feb/2024:14:59:31 +0100] "GET /login HTTP/1.1" 200 - http-bio-9090-exec-2 1
+0:0:0:0:0:0:0:1 - - [20/Feb/2024:15:00:28 +0100] "GET /login HTTP/1.1" 200 1464 http-bio-9090-exec-1 574
+0:0:0:0:0:0:0:1 - - [20/Feb/2024:15:01:07 +0100] "GET /login HTTP/1.1" 200 4510 http-bio-9090-exec-1 214
+0:0:0:0:0:0:0:1 - - [20/Feb/2024:15:01:15 +0100] "POST /login HTTP/1.1" 200 1928 http-bio-9090-exec-3 10
+0:0:0:0:0:0:0:1 - - [20/Feb/2024:15:01:28 +0100] "GET /style.css HTTP/1.1" 404 969 http-bio-9090-exec-4 2
+0:0:0:0:0:0:0:1 - - [20/Feb/2024:15:01:36 +0100] "GET /JSP/Add.jsp HTTP/1.1" 200 1650 http-bio-9090-exec-5 497
+0:0:0:0:0:0:0:1 - - [20/Feb/2024:15:04:50 +0100] "GET /style.css HTTP/1.1" 404 969 http-bio-9090-exec-2 50
+0:0:0:0:0:0:0:1 - - [20/Feb/2024:15:04:55 +0100] "GET /Add HTTP/1.1" 200 1647 http-bio-9090-exec-3 1202
+0:0:0:0:0:0:0:1 - - [20/Feb/2024:15:09:44 +0100] "GET /style.css HTTP/1.1" 404 969 http-bio-9090-exec-2 41
+0:0:0:0:0:0:0:1 - - [20/Feb/2024:15:10:06 +0100] "GET /JSP/AddTeacherStudent.jsp HTTP/1.1" 200 3934 http-bio-9090-exec-3 722
+0:0:0:0:0:0:0:1 - - [20/Feb/2024:15:10:06 +0100] "GET /CSS/FooterStyle.css HTTP/1.1" 304 - http-bio-9090-exec-4 13

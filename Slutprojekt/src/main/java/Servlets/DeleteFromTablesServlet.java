@@ -40,7 +40,7 @@ public class DeleteFromTablesServlet extends HttpServlet {
 
         resp.setContentType("text/html");
         //retrieving data from loginForm
-        String id = req.getParameter("id");
+        String id = req.getParameter("selectedId");
         String fname = req.getParameter("fname");
         String lname = req.getParameter("lname");
         String town = req.getParameter("town");
@@ -53,10 +53,11 @@ public class DeleteFromTablesServlet extends HttpServlet {
         String YHP = req.getParameter("YHP");
         String description = req.getParameter("description");
         String privilage_type = req.getParameter("privilage_type");
-        String whatTable = req.getParameter("whatTable");
+        //String whatTable = req.getParameter("whatTable");
+        System.out.println("Id" + id);
 
 
-        //comparing data with DB student or teacher
+       /* //comparing data with DB student or teacher
         if (whatTable.equals("student")) {
             MySQLConnector.getConnector().insertQuery("deleteFromStudents", id,"I");
             LinkedList<String[]> data = MySQLConnector.getConnector().selectQuery("allFromStudents");
@@ -86,6 +87,6 @@ public class DeleteFromTablesServlet extends HttpServlet {
             LinkedList<String[]> data = MySQLConnector.getConnector().selectQuery("allFromStudents");
             req.setAttribute("data", data);
             req.getRequestDispatcher("JSP/Add.jsp").forward(req,resp);
-        }
+        }*/
     }
 }
