@@ -17,10 +17,10 @@
 <h1>Hello User!</h1>
 <h5>Här kan du lägga till ny lärare eller student</h5>
 <div>
-<form class="AddForm" action="/Enroll" method="post">
+<form class="AddForm" action="/Add" method="post">
     <p class="ParagraphForm">
-        <label class="FormCell" for="user_type">Choose a user type:</label>
-        <select id="user_type" name="user_type">
+        <label class="FormCell" for="whatTable">Choose a user type:</label>
+        <select id="whatTable" name="user_type">
             <option value="student">Student</option>
             <option value="teacher">Teacher</option>
         </select><br>
@@ -57,6 +57,36 @@
     <input name="login" type="submit">
 
 </form>
+    <form action="Add" method="post">
+        <table class="table">
+            <tr>
+                <!-- Specify the specific column headers you want to include based on their indexes -->
+                <c:forEach items="${data}}" var="columnName" varStatus="loop">
+                <c:if test="${loop.index == 0}">
+            <tr>
+                <c:forEach items="${dataPunkt}" var="columnName">
+                    <th>${columnName}</th>
+                </c:forEach>
+            </tr>
+            </c:if>
+            </c:forEach>
+            </tr>
+            <c:forEach items="${data}" var="dataPunkt" varStatus="loop">
+                <c:if test="${loop.index != 0}">
+                    <tr>
+                        <!-- Access specific column values based on their indexes -->
+                        <td>${dataPunkt[1]}</td><td>${dataPunkt[2]}</td><td>${dataPunkt[4]}</td><td>${dataPunkt[5]}</td>
+                    </tr>
+                </c:if>
+            </c:forEach>
+        </table>
+        <%--    <select id="whatTable" name="whatTable">
+                <option value="student">Student</option>
+                <option value="teacher">Teacher</option>
+            </select>--%>
+        <!-- Add a submit button to submit the selected ID value -->
+        <input type="submit" value="Submit">
+    </form>
 </div>
 <%@include file="Footer.jsp"%>
 </body>

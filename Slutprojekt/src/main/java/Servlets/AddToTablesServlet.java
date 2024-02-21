@@ -16,7 +16,7 @@ public class AddToTablesServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        req.getRequestDispatcher("JSP/Add.jsp").forward(req, resp);
+        req.getRequestDispatcher("JSP/AddTeacherStudent.jsp").forward(req, resp);
 
     }
 
