@@ -10,9 +10,10 @@
 <html>
 <head>
     <title>Title</title>
-    <%@include file="NavbarStudent.jsp"%>
+
     <link rel="stylesheet" href="../CSS/Style.css"></head>
 <body>
+<%@include file="NavBarTeacher.jsp"%>
 <h1>Hello User!</h1>
 <h5>Please log in to the database to be able to display the information in the tables.</h5>
 <form action="/login" method="post">
