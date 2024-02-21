@@ -40,9 +40,6 @@ public class AttendanceServlet extends HttpServlet {
         req.getSession().setAttribute("userBean", userBean);
 <<<<<<< Updated upstream
         req.getRequestDispatcher("JSP/UserPageTeacher.jsp").forward(req, resp);*/
-=======
-        req.getRequestDispatcher("JSP/UserPageTeacher.jsp").forward(req, resp);
->>>>>>> Stashed changes
 
     }
 

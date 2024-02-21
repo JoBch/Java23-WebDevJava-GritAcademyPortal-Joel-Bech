@@ -1,0 +1,38 @@
+.headerLinks {
+    display: flex;
+    min-height: 30px;
+    background-color: aliceblue;
+    justify-content: space-around;
+    align-content: space-around;
+    flex-direction: row;
+    border: solid 2px;
+}
+.mainNavbar {
+    display: flex;
+    width: 100%;
+    min-height: 80px;
+    max-height: 120px;
+    padding-bottom: 20px;
+    background-color: #26272b;
+    justify-content: space-around;
+    align-content: space-around;
+    flex-direction: row;
+    flex-wrap: wrap;
+    box-shadow: 0 1px 4px rgb(146 161 176 / 15%);
+    border: 2px solid black;
+}
+.navBarTitle {
+    color: #737373;
+    text-align: center;
+}
+#menuLinks {
+    display: flex;
+    justify-content: space-between;
+}
+.navBarLinks{
+    color: #737373;
+}
+.navLink {
+    padding-right: 45px;
+    padding-left: 45px;
+}

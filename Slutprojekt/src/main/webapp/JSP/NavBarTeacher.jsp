@@ -6,16 +6,25 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<navbar class="mainNavbarStudent">
-    <banner>
-        <h1>GRIT ACADEMY</h1>
-        <!-- Vill vi få in namnet på den inloggade här i navbar titel kanske?-->
-    </banner>
+<link rel="stylesheet" href="../CSS/Navbar.css">
 
-    <nav>
-        <a href="/">HOME</a>
-        <a href="/Courses">COURSES</a>
-        <a href="/Login">LOGIN</a>
-        <a href="/UserPage">USERPAGE</a>
-    </nav>
-</navbar>
+<div class="mainNavbar">
+    <navbar>
+        <banner>
+
+            <h1 class="navBarTitle">GRIT ACADEMY</h1>
+
+            <!-- Vill vi få in namnet på den inloggade här i navbar titel kanske?-->
+        </banner>
+    <div id="menuLinks">
+        <nav class="navBarLinks">
+            <a class="navLink" href="/">HOME</a>
+            <a class="navLink" href="/Courses">LÄGG TILL EN KURS</a>
+
+            <a class="navLink" href="/UserPage">USERPAGE</a>
+
+        </nav>
+        <a class="navLink" href="/https://www.facebook.com/"><button style="text-align: center">Logga ut</button></a>
+    </div>
+    </navbar>
+</div>

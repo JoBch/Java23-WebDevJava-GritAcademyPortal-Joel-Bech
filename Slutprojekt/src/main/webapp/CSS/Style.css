@@ -19,6 +19,7 @@ a:visited {
 body {
     background-color: lightcoral;
     color: black;
+    text-align: center;
     margin: 0;
 }
 .AddForm{
@@ -31,33 +32,7 @@ body {
     display: table-cell;
 }
 
-.headerLinks {
-    display: flex;
-    min-height: 30px;
-    background-color: aliceblue;
-    justify-content: space-around;
-    align-content: space-around;
-    flex-direction: row;
-    border: solid 2px;
-}
 
-.mainNavbarStudent {
-    display: flex;
-    min-height: 80px;
-    max-height: 120px;
-    padding-bottom: 20px;
-    background-color: #26272b;
-    justify-content: space-around;
-    align-content: space-around;
-    flex-direction: row;
-    <!--border: 2px solid black;-->
-}
-.navBarTitle {
-    color: #737373;
-}
-.navBarLinks{
-    color: #737373;
-}
 
 
 .table {

@@ -11,14 +11,12 @@
 <head>
     <title>Kurser</title>
     <link rel="stylesheet" href="../CSS/Style.css">
+    <%@include file="NavBarTeacher.jsp"%>
 </head>
 <body>
-<!--
-<%@include file="HeaderLinks.jsp"%>
--->
-<%@include file="NavbarStudent.jsp"%>
 
-<form id="addStudent" action=Courses method=POST>
+
+<form class="AddForm" action=Courses method=POST>
     <label for="name">Skriv in kursens namn:</label><br>
     <input type=text id=name name=name required><br>
     <label for=yhp>Skriv in Yrkeshögskolepoäng:</label><br>
@@ -28,6 +26,7 @@
 
     <input type=submit value=Submit>
 </form>
-<%@include file="Footer.jsp"%>
+
 </body>
+<%@include file="Footer.jsp"%>
 </html>
