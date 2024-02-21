@@ -10,7 +10,7 @@
 <html>
 <head>
     <title>Add Shit</title>
-    <%@include file="HeaderLinks.jsp"%>
+    <%@include file="NavBarTeacher.jsp"%>
     <link rel="stylesheet" href="../CSS/Style.css">
 </head>
 <body>
@@ -83,5 +83,6 @@
     <!-- Add a submit button to submit the selected ID value -->
     <input type="submit" value="Submit">
 </form>
+<%@include file="Footer.jsp"%>
 </body>
 </html>

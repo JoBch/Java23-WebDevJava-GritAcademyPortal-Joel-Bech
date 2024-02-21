@@ -10,7 +10,7 @@
 <html>
 <head>
     <title>Title</title>
-    <%@include file="HeaderLinks.jsp"%>
+    <%@include file="NavBarTeacher.jsp"%>
     <link rel="stylesheet" href="../CSS/Style.css">
 </head>
 <body>
@@ -32,5 +32,6 @@
                     <input type=text id=password name=password required><br>
                     <input type=submit value=Submit>
                     </form>
+    <%@include file="Footer.jsp"%>
 </body>
 </html>

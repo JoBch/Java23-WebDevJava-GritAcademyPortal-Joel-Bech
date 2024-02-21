@@ -10,7 +10,7 @@
 <html>
 <head>
     <title>Title</title>
-    <%@include file="HeaderLinks.jsp"%>
+    <%@include file="NavbarStudent.jsp"%>
     <link rel="stylesheet" href="../CSS/Style.css"></head>
 <body>
 <h1>Hello User!</h1>
@@ -61,4 +61,5 @@
     </c:forEach>
 </table>
 </body>
+<%@include file="Footer.jsp"%>
 </html>

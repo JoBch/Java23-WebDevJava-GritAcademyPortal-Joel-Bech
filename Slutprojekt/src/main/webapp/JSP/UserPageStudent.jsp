@@ -36,6 +36,7 @@
 <%--Denna biten är lite magisk och jag förstår mig inte riktigt på den men den är cool som fan. Skapar dynamiskt ALLA headers till vårt table
 och populerar dem med data därefter.--%>
 <body>
+<%@include file="NavbarStudent.jsp"%>
 <h1>Hello World from Show Students!</h1>
 <h3>${param.message}</h3>
 <table class="table">
@@ -56,6 +57,7 @@ och populerar dem med data därefter.--%>
         </c:if>
     </c:forEach>
 </table>
+<%@include file="Footer.jsp"%>
 </body>
 </html>
 

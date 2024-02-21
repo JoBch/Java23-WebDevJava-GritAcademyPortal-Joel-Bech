@@ -10,7 +10,7 @@
 <html>
 <head>
     <title>Welcome Teacher</title>
-    <%@include file="HeaderLinks.jsp"%>
+    <%@include file="NavBarTeacher.jsp"%>
     <link rel="stylesheet" href="../CSS/Style.css">
 </head>
 <body>
@@ -39,5 +39,6 @@
     Last name: <input name="lname" type="text">
     <input name="showStudents" type="submit">
 </form>
+<%@include file="Footer.jsp"%>
 </body>
 </html>
