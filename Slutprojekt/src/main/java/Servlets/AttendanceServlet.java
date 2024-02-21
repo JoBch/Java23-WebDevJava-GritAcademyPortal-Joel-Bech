@@ -24,11 +24,11 @@ public class AttendanceServlet extends HttpServlet {
 
 
 
-        LinkedList<String[]> data = MySQLConnector.getConnector().selectQuery("allFromStudents");
+/*        LinkedList<String[]> data = MySQLConnector.getConnector().selectQuery("allFromStudents");
         req.setAttribute("data", data);
-        req.getRequestDispatcher("JSP/DisplayStudents.jsp").forward(req,resp);
+        req.getRequestDispatcher("JSP/DisplayStudents.jsp").forward(req,resp);*/
 
-        /*resp.setContentType("text/html");
+        resp.setContentType("text/html");
         //retrieving data from loginForm
         String fname = req.getParameter("fname");
         String lname = req.getParameter("lname");
@@ -38,8 +38,7 @@ public class AttendanceServlet extends HttpServlet {
         userBean.setData(data);
 
         req.getSession().setAttribute("userBean", userBean);
-<<<<<<< Updated upstream
-        req.getRequestDispatcher("JSP/UserPageTeacher.jsp").forward(req, resp);*/
+        req.getRequestDispatcher("JSP/UserPageTeacher.jsp").forward(req, resp);
 
     }
 

@@ -14,7 +14,22 @@
     <link rel="stylesheet" href="../CSS/Style.css">
 </head>
 <body>
-<form action="/Delete" method="post">
+<c:choose>
+    <c:when test="${userBean.userType == 'student'}">
+        <!-- Code to execute if the user is a student -->
+        <p>The user is a student.</p>
+    </c:when>
+    <c:when test="${userBean.userType == 'teacher'}">
+        <!-- Code to execute if the user is a teacher -->
+        <p>The user is a teacher.</p>
+    </c:when>
+    <c:otherwise>
+        <!-- Code to execute if none of the above conditions are true -->
+        <p>The user's type is unknown.</p>
+    </c:otherwise>
+</c:choose>
+
+<form action="/Add" method="post">
     id : <input name="id" type="text">
     fname : <input name="fname" type="text">
     lname : <input name="lname" type="text">
@@ -38,23 +53,35 @@
     </select>
     <input name="add" type="submit">
 </form>
-<table class="table">
-    <c:forEach items="${data}" var="dataPunkt" varStatus="loop">
-        <c:if test="${loop.index == 0}">
-            <tr>
-                <c:forEach items="${dataPunkt}" var="columnName">
+<form action="Delete" method="post">
+    <table class="table">
+        <tr>
+            <!-- Specify the specific column headers you want to include based on their indexes -->
+            <c:forEach items="${data}" var="columnName" varStatus="loop">
+                <c:if test="${loop.index == 0 || loop.index == 1 || loop.index == 2 || loop.index == 4 || loop.index == 5}">
                     <th>${columnName}</th>
-                </c:forEach>
-            </tr>
-        </c:if>
-        <c:if test="${loop.index != 0}">
-            <tr>
-                <c:forEach items="${dataPunkt}" var="columnValue">
-                    <td>${columnValue}</td>
-                </c:forEach>
-            </tr>
-        </c:if>
-    </c:forEach>
-</table>
+                </c:if>
+            </c:forEach>
+            <!-- Add a column for the radio buttons -->
+            <th>Select</th>
+        </tr>
+        <c:forEach items="${data}" var="dataPunkt" varStatus="loop">
+            <c:if test="${loop.index != 0}">
+                <tr>
+                    <!-- Access specific column values based on their indexes -->
+                    <td>${dataPunkt[0]}</td><td>${dataPunkt[1]}</td><td>${dataPunkt[2]}</td><td>${dataPunkt[4]}</td><td>${dataPunkt[5]}</td>
+                    <!-- Add a radio button for each row, associating it with the ID value -->
+                    <td><input type="radio" name="selectedId" value="${dataPunkt[0]}"></td>
+                </tr>
+            </c:if>
+        </c:forEach>
+    </table>
+<%--    <select id="whatTable" name="whatTable">
+        <option value="student">Student</option>
+        <option value="teacher">Teacher</option>
+    </select>--%>
+    <!-- Add a submit button to submit the selected ID value -->
+    <input type="submit" value="Submit">
+</form>
 </body>
 </html>

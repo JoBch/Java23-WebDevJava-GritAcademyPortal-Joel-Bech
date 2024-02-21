@@ -17,7 +17,7 @@ import java.util.List;
 public class LoginServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse response) throws ServletException, IOException {
-            LinkedList<String[]> data = MySQLConnector.getConnector().selectQuery("selectAllFromCourses");
+            LinkedList<String[]> data = MySQLConnector.getConnector().selectQuery("allFromCourses");
             JavaBean coursesBean = new JavaBean();
             coursesBean.setData(data);
 
@@ -47,7 +47,12 @@ public class LoginServlet extends HttpServlet {
                 JavaBean userBean = new JavaBean((data.get(1))[0], USER_TYPE.student, PRIVILEGE_TYPE.user, STATE_TYPE.confirmed);
                 req.getSession().setAttribute("userBean", userBean);
                 userBean.setData(data);
-                System.out.println(((JavaBean)(req.getSession().getAttribute("userBean"))).getData());
+
+                LinkedList<String[]> table = MySQLConnector.getConnector().selectQuery("studentsLogin", username, password);
+                JavaBean coursesBean = new JavaBean();
+                coursesBean.setData(table);
+                req.getSession().setAttribute("coursesBean", coursesBean);
+
                 req.getRequestDispatcher("JSP/UserPageStudent.jsp").forward(req,resp);
                 System.out.println("HEJ JAG ÄR EN STUDENT");
             }else{//if login not found goes back to login form and sows a message
@@ -63,8 +68,12 @@ public class LoginServlet extends HttpServlet {
                 req.getSession().setAttribute("userBean", userBean);
                 userBean.setData(data);
 
-                System.out.println(((JavaBean)(req.getSession().getAttribute("userBean"))).getData());
+                LinkedList<String[]> table = MySQLConnector.getConnector().selectQuery("teachersLogin");
+                JavaBean coursesBean = new JavaBean();
+                coursesBean.setData(table);
+                req.getSession().setAttribute("coursesBean", coursesBean);
 
+                System.out.println("HEJ JAG ÄR ADMIN LÄRARE");
                 req.getRequestDispatcher("JSP/UserPageTeacher.jsp").forward(req,resp);
             }else{//if login not found goes back to login form and sows a message
                 req.getSession().setAttribute("errorMessage","Teacher not found");

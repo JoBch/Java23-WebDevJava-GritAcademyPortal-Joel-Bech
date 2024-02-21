@@ -16,7 +16,7 @@ public class AddToTablesServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        req.getRequestDispatcher("JSP/Courses.jsp").forward(req, resp);
+        req.getRequestDispatcher("JSP/Add.jsp").forward(req, resp);
 
     }
 
@@ -52,7 +52,7 @@ public class AddToTablesServlet extends HttpServlet {
             req.getRequestDispatcher("JSP/Add.jsp").forward(req,resp);
 
         }else if (whatTable.equals("courses")) {
-            MySQLConnector.getConnector().insertQuery("insertIntoCourses", name, YHP,description, "S", "I", "S");
+            MySQLConnector.getConnector().insertQuery("insertIntoCourses", name, YHP, description, "S", "I", "S");
             LinkedList<String[]> data = MySQLConnector.getConnector().selectQuery("allFromCourses");
             req.setAttribute("data", data);
             req.getRequestDispatcher("JSP/Add.jsp").forward(req,resp);
