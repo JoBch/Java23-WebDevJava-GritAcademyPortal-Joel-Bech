@@ -93,7 +93,6 @@
     </select>
     <input name="add" type="submit">
 </form>
-<form action="Delete" method="post">
     <table class="table">
         <tr>
             <!-- Specify the specific column headers you want to include based on their indexes -->
@@ -117,13 +116,6 @@
             </c:if>
         </c:forEach>
     </table>
-<%--    <select id="whatTable" name="whatTable">
-        <option value="student">Student</option>
-        <option value="teacher">Teacher</option>
-    </select>--%>
-    <!-- Add a submit button to submit the selected ID value -->
-    <input type="submit" value="Submit">
-</form>
 <%@include file="Footer.jsp"%>
 </body>
 </html>

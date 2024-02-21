@@ -18,12 +18,8 @@ public class LoginServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse response) throws ServletException, IOException {
             LinkedList<String[]> data = MySQLConnector.getConnector().selectQuery("allFromCourses");
-            JavaBean coursesBean = new JavaBean();
-            coursesBean.setData(data);
-
-            req.getSession().setAttribute("coursesBean", coursesBean);
+            req.getSession().setAttribute("data", data);
             req.getRequestDispatcher("JSP/Login.jsp").forward(req, response);
-            System.out.println(((JavaBean)(req.getSession().getAttribute("coursesBean"))).getData());
 
     }
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

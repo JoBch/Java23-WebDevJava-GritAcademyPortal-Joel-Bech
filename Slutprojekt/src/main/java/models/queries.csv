@@ -1,4 +1,4 @@
-allFromStudents;SELECT * FROM students;gritacademy;localhost;3350;Admin;Password
+allFromStudents;SELECT * FROM students;gritacademy;localhost;3307;Admin;Password
 allFromTeachers;SELECT * FROM teachers;gritacademy;localhost;3350;Admin;Password
 allFromCourses;SELECT * FROM courses;gritacademy;localhost;3350;Admin;Password
 
@@ -24,7 +24,7 @@ deleteFromTeachersCourses;DELETE FROM teachers_courses WHERE id=?;gritacademy;lo
 
 
 insertIntoCourses;INSERT INTO `courses`(`id`, `name`, `YHP`, `description`) VALUES (NULL ,?, ?, ?);gritacademy;localhost;3350;Admin;Password
-insertIntoStudents;INSERT INTO `students`(`id`, `fname`, `lname`, `town`, `hobby`, `email`, `phone`, `username`, `password`) VALUES (NULL, ?, ?, ?, ?, ?, ?, ?, ?);gritacademy;localhost;3350;Admin;Password
+insertIntoStudents;INSERT INTO `students`(`id`, `fname`, `lname`, `town`, `hobby`, `email`, `phone`, `username`, `password`) VALUES (NULL, ?, ?, ?, ?, ?, ?, ?, ?);gritacademy;localhost;3307;Admin;Password
 insertIntoTeachers;INSERT INTO `teachers`(`id`, `fname`, `lname`, `town`, `email`, `phone`, `username`, `password`, `privilage_type`) VALUES (NULL, ?, ?, ?, ?, ?, ?, ?, ?);gritacademy;localhost;3350;Admin;Password
 insertIntoStudentsCourses;INSERT INTO students_courses (studentsid, coursesid) SELECT s.id AS studentsid, c.id AS subjectsid FROM students s JOIN courses c ON s.fname = ? AND s.lname = ? AND c.name = ?;gritacademy;localhost;3350;Admin;Password
 insertIntoTeachersCourses;INSERT INTO teachers_courses (teachersid, coursesid) SELECT t.id AS teachersid, c.id AS subjectsid FROM teachers t JOIN courses c ON t.fname = ? AND t.lname = ? AND c.name = ?;gritacademy;localhost;3350;Admin;Password

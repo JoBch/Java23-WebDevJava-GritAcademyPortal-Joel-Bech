@@ -27,7 +27,7 @@
     <input name="login" type="submit">
 </form>
 <table class="table">
-    <c:forEach items="${coursesBean.data}" var="dataPunkt" varStatus="loop">
+    <c:forEach items="${data}" var="dataPunkt" varStatus="loop">
         <c:if test="${loop.index == 0}">
             <tr>
                 <c:forEach items="${dataPunkt}" var="columnName">
