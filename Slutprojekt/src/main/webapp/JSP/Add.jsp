@@ -40,6 +40,9 @@
     phone : <input name="phone" type="text">
     Username : <input name="username" type="text">
     Password : <input name="password" type="password">
+    name : <input name="name" type="text">
+    YHP : <input name="YHP" type="text">
+    Description : <input name="description" type="password">
 <%--Use this select only for teacher--%>
         <select id="privilage_type" name="privilage_type">
         <option value="admin">Admin</option>
@@ -50,6 +53,7 @@
     <select id="whatTable" name="whatTable">
         <option value="student">Student</option>
         <option value="teacher">Teacher</option>
+        <option value="courses">Courses</option>
     </select>
     <input name="add" type="submit">
 </form>
@@ -57,20 +61,21 @@
     <table class="table">
         <tr>
             <!-- Specify the specific column headers you want to include based on their indexes -->
-            <c:forEach items="${data}" var="columnName" varStatus="loop">
-                <c:if test="${loop.index == 0 || loop.index == 1 || loop.index == 2 || loop.index == 4 || loop.index == 5}">
-                    <th>${columnName}</th>
-                </c:if>
+            <c:forEach items="${data}}" var="columnName" varStatus="loop">
+            <c:if test="${loop.index == 0}">
+        <tr>
+            <c:forEach items="${dataPunkt}" var="columnName">
+                <th>${columnName}</th>
             </c:forEach>
-            <!-- Add a column for the radio buttons -->
-            <th>Select</th>
+        </tr>
+        </c:if>
+        </c:forEach>
         </tr>
         <c:forEach items="${data}" var="dataPunkt" varStatus="loop">
             <c:if test="${loop.index != 0}">
                 <tr>
                     <!-- Access specific column values based on their indexes -->
-                    <td>${dataPunkt[0]}</td><td>${dataPunkt[1]}</td><td>${dataPunkt[2]}</td><td>${dataPunkt[4]}</td><td>${dataPunkt[5]}</td>
-                    <!-- Add a radio button for each row, associating it with the ID value -->
+                    <td>${dataPunkt[1]}</td><td>${dataPunkt[2]}</td><td>${dataPunkt[4]}</td><td>${dataPunkt[5]}</td>
                     <td><input type="radio" name="selectedId" value="${dataPunkt[0]}"></td>
                 </tr>
             </c:if>

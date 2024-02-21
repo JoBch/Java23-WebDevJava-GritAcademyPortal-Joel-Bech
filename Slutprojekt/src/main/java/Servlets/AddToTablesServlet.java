@@ -38,6 +38,8 @@ public class AddToTablesServlet extends HttpServlet {
         String privilage_type = req.getParameter("privilage_type");
         String whatTable = req.getParameter("whatTable");
 
+        System.out.println(name +"   "+ YHP + "    " + description);
+
         //comparing data with DB student or teacher
         if (whatTable.equals("student")) {
             MySQLConnector.getConnector().insertQuery("insertIntoStudents", fname, lname, town, hobby, email, phone, username, password,"S","S","S","S","S","S","S","S");

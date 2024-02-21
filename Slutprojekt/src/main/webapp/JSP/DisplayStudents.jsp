@@ -37,23 +37,5 @@ plocka ut column 1,2,3,4 ur 3 olika tables men de har olika headers så funkar d
     </c:forEach>
 </table>
 <br>
-<table class="table">
-    <tr>
-        <!-- Specify the specific column headers you want to include based on their indexes -->
-        <c:forEach items="${coursesBean.data1[0]}" var="columnName1" varStatus="loop">
-            <c:if test="${loop.index == 1 || loop.index == 2|| loop.index == 3}">
-                <th>${columnName1}</th>
-            </c:if>
-        </c:forEach>
-    </tr>
-    <c:forEach items="${coursesBean.data1}" var="dataPunkt1" varStatus="loop">
-        <c:if test="${loop.index != 0}">
-            <tr>
-                <!-- Access specific column values based on their indexes -->
-                <td>${dataPunkt1[1]}</td><td>${dataPunkt1[2]}</td><td>${dataPunkt1[3]}</td>
-            </tr>
-        </c:if>
-    </c:forEach>
-</table>
 </body>
 </html>

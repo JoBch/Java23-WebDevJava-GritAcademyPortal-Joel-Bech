@@ -10,7 +10,6 @@
 <html>
 <head>
     <title>Title</title>
-
     <link rel="stylesheet" href="../CSS/Style.css"></head>
 <body>
 <%@include file="NavBarTeacher.jsp"%>
@@ -27,20 +26,6 @@
     </select>
     <input name="login" type="submit">
 </form>
-
-
-<!--
-<tr>
-      <td>
-        <input value="1" id="type_radio_1" name="type_radio" type="radio" />
-      </td>
-      <td>
-        Data 1
-      </td>
-    </tr>
-    <tr>
-
--->
 <table class="table">
     <c:forEach items="${coursesBean.data}" var="dataPunkt" varStatus="loop">
         <c:if test="${loop.index == 0}">
@@ -53,9 +38,7 @@
         <c:if test="${loop.index != 0}">
             <tr>
                 <c:forEach items="${dataPunkt}" var="columnValue">
-
-                    <td>${columnValue}
-                    </td>
+                    <td>${columnValue}</td>
                 </c:forEach>
             </tr>
         </c:if>

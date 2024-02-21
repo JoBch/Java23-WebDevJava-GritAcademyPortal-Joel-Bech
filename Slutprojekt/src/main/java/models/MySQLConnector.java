@@ -130,7 +130,7 @@ public class MySQLConnector {
                 //if(args[i].equals("")) continue;
                 if(args[i+(args.length/2)].equals("S")){
                     ps.setString(i+1,args[i]);
-                }else if(args[i].equals("I")){
+                }else if(args[i+(args.length/2)].equals("I")){
                     ps.setInt(i+1,Integer.parseInt(args[i]));
                 }
             }

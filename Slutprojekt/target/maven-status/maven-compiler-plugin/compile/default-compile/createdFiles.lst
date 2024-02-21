@@ -2,6 +2,7 @@ models\USER_TYPE.class
 Servlets\AttendanceServlet.class
 Servlets\ShowtablesServlet.class
 Servlets\AddToTablesServlet.class
+Servlets\Index.class
 org\Slutprojekt\JAXRSConfiguration.class
 models\MySQLConnector.class
 Servlets\DeleteFromTablesServlet.class

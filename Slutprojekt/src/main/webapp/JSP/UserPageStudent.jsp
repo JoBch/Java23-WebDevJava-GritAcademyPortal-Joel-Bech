@@ -43,7 +43,7 @@ och populerar dem med data därefter.--%>
     <c:forEach items="${userBean.data}" var="dataPunkt" varStatus="loop">
         <c:if test="${loop.index == 0}">
             <tr>
-                <c:forEach items="${dataPunkt}" var="columnName">
+                <c:forEach items="${dataPunkt[0]}" var="columnName">
                     <th>${columnName}</th>
                 </c:forEach>
             </tr>
