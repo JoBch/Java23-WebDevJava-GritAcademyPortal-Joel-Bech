@@ -9,7 +9,7 @@
 <html>
 <head>
     <link rel="stylesheet" href="../CSS/Style.css">
-    <title>Lägg till ny student eller lärare</title>
+    <title>Lägg till ny student/lärare</title>
 
 </head>
 <body>

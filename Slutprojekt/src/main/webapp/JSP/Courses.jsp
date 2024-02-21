@@ -9,7 +9,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Kurser</title>
+    <title>Lägg till ny kurs</title>
     <link rel="stylesheet" href="../CSS/Style.css">
     <%@include file="NavBarTeacher.jsp"%>
 </head>

@@ -18,13 +18,13 @@
         </banner>
     <div id="menuLinks">
         <nav class="navBarLinks">
-            <a class="navLink" href="/">HOME</a>
-            <a class="navLink" href="/Courses">LÄGG TILL EN KURS</a>
-
-            <a class="navLink" href="/UserPage">USERPAGE</a>
-
+            <a class="navLink" href="/Attendance">HEM</a>
+            <a class="navLink" href="/Courses">ADMIN KURSER</a>
+            <a class="navLink" href="/Add">ADMIN LÄGG TILL ELEV/LÄRARE</a>
+            <a class="navLink" href="/Delete">ADMIN TA BORT ELEV/LÄRARE</a>
         </nav>
-        <a class="navLink" href="/https://www.facebook.com/"><button style="text-align: center">Logga ut</button></a>
+
+        <a class="navLink" href="/logout"><form style=text-align:center; action="/Login.jsp" method="POST"><input type="submit" id="logout" value="Logga ut"></form></a>
     </div>
     </navbar>
 </div>

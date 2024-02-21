@@ -10,8 +10,8 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Enroll student</title>
-    <%@include file="HeaderLinks.jsp"%>
+    <title>Välkommen Student</title>
+    <%@include file="NavbarStudent.jsp"%>
     <link rel="stylesheet" href="../CSS/Style.css">
 </head>
 

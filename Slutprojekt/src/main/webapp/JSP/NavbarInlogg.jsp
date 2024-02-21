@@ -16,11 +16,7 @@
 
             <!-- Vill vi få in namnet på den inloggade här i navbar titel kanske?-->
         </banner>
-        <div id="menuLinks">
-            <nav class="navBarLinks">
-                <a class="navLink" href="/Attendance">HOME</a>
-            </nav>
-            <a class="navLink" href="/logout"><button style="text-align: center">Logga ut</button></a>
-        </div>
+            <h2 id="NavInlogg">Vänligen logga in här nedan</h2>
+
     </navbar>
 </div>

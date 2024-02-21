@@ -9,13 +9,13 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Start Page</title>
+    <title>Grit Academy Portal</title>
     <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
     <link href="/style.css" rel="stylesheet">
 </head>
+<%@include file="NavbarStudent.jsp"%>
 <body class="body">
-<header class="headerLinks">
-</header>
+
 <h1>Hello User!</h1>
 <h5>Please log in to the database to be able to display the information in the tables.</h5>
 <a href="/login">Login</a>

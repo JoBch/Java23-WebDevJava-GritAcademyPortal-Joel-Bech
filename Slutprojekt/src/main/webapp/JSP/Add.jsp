@@ -9,7 +9,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Add Shit</title>
+    <title>Lägg till Student/Lärare/Kurs</title>
     <%@include file="NavBarTeacher.jsp"%>
     <link rel="stylesheet" href="../CSS/Style.css">
 </head>
@@ -30,24 +30,60 @@
 </c:choose>
 
 <form action="/Add" method="post">
-    id : <input name="id" type="text">
-    fname : <input name="fname" type="text">
-    lname : <input name="lname" type="text">
-    town : <input name="town" type="text">
+
+    <p class="ParagraphForm">
+        <label class="FormCell" for=fname>Förnamn</label>
+        <input class="FormCell" name="fname" id="fname" type="text"><br>
+    </p>
+
+    <p class="ParagraphForm">
+        <label class="FormCell" for=lname>Efternamn</label>
+        <input class="FormCell" name="lname" id="lname" type="text"><br>
+    </p>
+
+    <p class="ParagraphForm">
+        <label class="FormCell" for=town>Stad</label>
+        <input class="FormCell" name="town" id="town" type="text"><br>
+    </p>
+
     <%--Use this textfield only for user--%>
-    hobby : <input name="hobby" type="text">
-    email : <input name="email" type="text">
-    phone : <input name="phone" type="text">
-    Username : <input name="username" type="text">
-    Password : <input name="password" type="password">
-    name : <input name="name" type="text">
-    YHP : <input name="YHP" type="text">
-    Description : <input name="description" type="password">
+    <p class="ParagraphForm">
+        <label class="FormCell" for=hobby>Hobby</label>
+        <input class="FormCell" name="hobby" id="hobby" type="text"><br>
+    </p>
+
+    <p class="ParagraphForm">
+        <label class="FormCell" for=email>Email</label>
+        <input class="FormCell" name="email" id="email" type="text"><br>
+    </p>
+    <p class="ParagraphForm">
+        <label class="FormCell" for=phone>Telefon</label>
+        <input class="FormCell" name="phone" id="phone" type="text"><br>
+    </p>
+    <p class="ParagraphForm">
+        <label class="FormCell" for=username>Username</label>
+        <input class="FormCell" name="username" id="username" type="text"><br>
+    </p>
+    <p class="ParagraphForm">
+        <label class="FormCell" for=password>Password</label>
+        <input class="FormCell" name="password" id="password" type="text"><br>
+    </p>
+
+    <h1>HÄR LÄGGER DU TILL FÖR KURSER JOEL</h1>
+    <p class="ParagraphForm">
+        <label class="FormCell" for=name>Namn på kurs</label>
+        <input class="FormCell" name="name" id="name" type="text"><br>
+    </p>
+
+    <p class="ParagraphForm">
+        <label class="FormCell" for=yhp>YHP</label>
+        <input class="FormCell" name="yhp" id="yhp" type="text"><br>
+    </p>
+    <p class="ParagraphForm">
+        <label class="FormCell" for=description>Beskrivning av kurs</label>
+        <input class="FormCell" name="description" id="description" type="text"><br>
+    </p>
 <%--Use this select only for teacher--%>
-        <select id="privilage_type" name="privilage_type">
-        <option value="admin">Admin</option>
-        <option value="user">User</option>
-    </select>
     <br><br>
     <label for="whatTable">Choose a user type:</label>
     <select id="whatTable" name="whatTable">

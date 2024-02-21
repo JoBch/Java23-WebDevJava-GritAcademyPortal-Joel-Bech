@@ -9,7 +9,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Welcome Teacher</title>
+    <title>Välkommen Lärare</title>
     <%@include file="NavBarTeacher.jsp"%>
     <link rel="stylesheet" href="../CSS/Style.css">
 </head>

@@ -9,10 +9,10 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Title</title>
+    <title>Logga in Grit Academy Portal</title>
     <link rel="stylesheet" href="../CSS/Style.css"></head>
 <body>
-<%@include file="NavBarTeacher.jsp"%>
+<%@include file="NavbarInlogg.jsp"%>
 <h1>Hello User!</h1>
 <h5>Please log in to the database to be able to display the information in the tables.</h5>
 <form action="/login" method="post">

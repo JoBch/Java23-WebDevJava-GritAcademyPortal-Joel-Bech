@@ -9,7 +9,7 @@
 <html>
 <head>
     <link rel="stylesheet" href="../CSS/Style.css"></head>
-    <title>Title</title>
+    <title>Visa studenter</title>
 </head>
 <!--Denna biten är lite magisk men den är ännu coolare som fan. Skapar dynamiskt headers som vi väljer till vårt table och populerar dem.
 Alltså baserat på svaret vi från DB så plockar den ut headers, av dessa kan vi välja vilka headerindex vi vill använda dynamiskt
