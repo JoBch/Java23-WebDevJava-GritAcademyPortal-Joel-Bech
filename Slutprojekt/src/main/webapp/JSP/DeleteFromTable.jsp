@@ -31,7 +31,7 @@ Denna delen används för att välja vilket table vi vill visa
 <form action="/Delete" method="post">
     <table class="table">
             <!-- Specify the specific column headers you want to include based on their indexes -->
-            <c:forEach items="${deleteTableData}}" var="columnName" varStatus="loop">
+            <c:forEach items="${showTableData}}" var="columnName" varStatus="loop">
                 <c:if test="${loop.index == 0}">
             <tr>
                 <c:forEach items="${dataPunkt}" var="columnName">
@@ -41,7 +41,7 @@ Denna delen används för att välja vilket table vi vill visa
             </c:if>
             </c:forEach>
         </tr>
-        <c:forEach items="${deleteTableData}" var="dataPunkt" varStatus="loop">
+        <c:forEach items="${showTableData}" var="dataPunkt" varStatus="loop">
             <c:if test="${loop.index != 0}">
                 <tr>
                     <!-- Access specific column values based on their indexes -->

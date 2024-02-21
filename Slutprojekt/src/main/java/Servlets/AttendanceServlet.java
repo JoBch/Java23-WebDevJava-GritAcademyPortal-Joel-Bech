@@ -1,3 +1,7 @@
+/***
+TROR INTE VI SKA ANVÄNDA DENNA
+***/
+/*
 package Servlets;
 
 import models.JavaBean;
@@ -15,18 +19,18 @@ import java.util.LinkedList;
 public class AttendanceServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
         req.getRequestDispatcher("JSP/UserPageTeacher.jsp").forward(req, resp);
+        JavaBean userBean = (JavaBean) req.getSession().getAttribute("userBean");
+        System.out.println("ID: " + userBean.getId() + " UserType: "+ userBean.getUserType() +" StateType: "+userBean.getStateType() +" PrivilegeType: "+ userBean.getprivilegeType());
+
     }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
+        JavaBean userBean = (JavaBean) req.getSession().getAttribute("userBean");
+        System.out.println("ID: " + userBean.getId() + " UserType: "+ userBean.getUserType() +" StateType: "+userBean.getStateType() +" PrivilegeType: "+ userBean.getprivilegeType());
 
-
-/*        LinkedList<String[]> data = MySQLConnector.getConnector().selectQuery("allFromStudents");
-        req.setAttribute("data", data);
-        req.getRequestDispatcher("JSP/DisplayStudents.jsp").forward(req,resp);*/
 
         resp.setContentType("text/html");
         //retrieving data from loginForm
@@ -42,4 +46,4 @@ public class AttendanceServlet extends HttpServlet {
 
     }
 
-}
+}*/

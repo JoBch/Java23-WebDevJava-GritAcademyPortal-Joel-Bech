@@ -1,5 +1,6 @@
 package Servlets;
 
+import models.JavaBean;
 import models.MySQLConnector;
 
 import javax.servlet.ServletException;
@@ -17,6 +18,8 @@ public class DeleteFromTablesServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
         req.getRequestDispatcher("JSP/DeleteFromTable.jsp").forward(req,resp);
+        JavaBean userBean = (JavaBean) req.getSession().getAttribute("userBean");
+        System.out.println("ID: " + userBean.getId() + " UserType: "+ userBean.getUserType() +" StateType: "+userBean.getStateType() +" PrivilegeType: "+ userBean.getprivilegeType());
     }
 
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -33,31 +36,31 @@ public class DeleteFromTablesServlet extends HttpServlet {
         if (whatTableDelete.equals("student")) {
             MySQLConnector.getConnector().insertQuery("deleteFromStudents", id, "I");
             LinkedList<String[]> data = MySQLConnector.getConnector().selectQuery("allFromStudents");
-            req.setAttribute("deleteTableData", data);
+            req.setAttribute("showTableData", data);
             req.getRequestDispatcher("JSP/DeleteFromTable.jsp").forward(req,resp);
 
         }else if (whatTableDelete.equals("teacher")) {
             MySQLConnector.getConnector().insertQuery("deleteFromTeachers", id,"I");
             LinkedList<String[]> data = MySQLConnector.getConnector().selectQuery("allFromTeachers");
-            req.setAttribute("deleteTableData", data);
+            req.setAttribute("showTableData", data);
             req.getRequestDispatcher("JSP/DeleteFromTable.jsp").forward(req,resp);
 
         }else if (whatTableDelete.equals("courses")) {
             MySQLConnector.getConnector().insertQuery("deleteFromCourses", id,"I");
             LinkedList<String[]> data = MySQLConnector.getConnector().selectQuery("allFromCourses");
-            req.setAttribute("deleteTableData", data);
+            req.setAttribute("showTableData", data);
             req.getRequestDispatcher("JSP/DeleteFromTable.jsp").forward(req,resp);
 
         }else if (whatTableDelete.equals("students_courses")) {
             MySQLConnector.getConnector().insertQuery("deleteFromStudentsCourses", id,"I");
             LinkedList<String[]> data = MySQLConnector.getConnector().selectQuery("selectStudentCourses");
-            req.setAttribute("deleteTableData", data);
+            req.setAttribute("showTableData", data);
             req.getRequestDispatcher("JSP/DeleteFromTable.jsp").forward(req,resp);
 
         }else if (whatTableDelete.equals("teachers_courses")) {
             MySQLConnector.getConnector().insertQuery("deleteFromTeachersCourses", id,"I");
             LinkedList<String[]> data = MySQLConnector.getConnector().selectQuery("selectTeacherCourses");
-            req.setAttribute("deleteTableData", data);
+            req.setAttribute("showTableData", data);
             req.getRequestDispatcher("JSP/DeleteFromTable.jsp").forward(req,resp);
         }
     }

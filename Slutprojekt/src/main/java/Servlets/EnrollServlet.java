@@ -18,10 +18,13 @@ public class EnrollServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
         req.getRequestDispatcher("JSP/AddTeacherStudent.jsp").forward(req, resp);
+        JavaBean userBean = (JavaBean) req.getSession().getAttribute("userBean");
+        System.out.println("ID: " + userBean.getId() + " UserType: "+ userBean.getUserType() +" StateType: "+userBean.getStateType() +" PrivilegeType: "+ userBean.getprivilegeType());
 
     }
 
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        System.out.println(req.getParameter("user_type") + " " + req.getParameter("fname") + " " +  req.getParameter("lname") +  " " + req.getParameter("town") +  " " + req.getParameter("email") +  " " + req.getParameter("phone") + " " +  req.getParameter("username") + " " +  req.getParameter("password"));
+        JavaBean userBean = (JavaBean) req.getSession().getAttribute("userBean");
+        System.out.println("ID: " + userBean.getId() + " UserType: "+ userBean.getUserType() +" StateType: "+userBean.getStateType() +" PrivilegeType: "+ userBean.getprivilegeType());
     }
 }

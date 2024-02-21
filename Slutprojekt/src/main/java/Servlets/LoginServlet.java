@@ -20,6 +20,9 @@ public class LoginServlet extends HttpServlet {
             LinkedList<String[]> data = MySQLConnector.getConnector().selectQuery("allFromCourses");
             req.getSession().setAttribute("data", data);
             req.getRequestDispatcher("JSP/Login.jsp").forward(req, response);
+            //JavaBean userBean = (JavaBean) req.getSession().getAttribute("userBean");
+            //System.out.println("ID: " + userBean.getId() + " UserType: "+ userBean.getUserType() +" StateType: "+userBean.getStateType() +" PrivilegeType: "+ userBean.getprivilegeType());
+
 
     }
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -50,6 +53,7 @@ public class LoginServlet extends HttpServlet {
                 req.getSession().setAttribute("coursesBean", coursesBean);
 
                 req.getRequestDispatcher("JSP/UserPageStudent.jsp").forward(req,resp);
+                System.out.println("ID: " + userBean.getId() + " UserType: "+ userBean.getUserType() +" StateType: "+userBean.getStateType() +" PrivilegeType: "+ userBean.getprivilegeType());
                 System.out.println("HEJ JAG ÄR EN STUDENT");
             }else{//if login not found goes back to login form and sows a message
                 req.getSession().setAttribute("errorMessage","Student not found");
