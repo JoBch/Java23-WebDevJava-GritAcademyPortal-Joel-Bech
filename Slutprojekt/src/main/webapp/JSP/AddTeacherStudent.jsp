@@ -66,12 +66,12 @@
         <!-- Header Row -->
         <tr>
             <!-- Assuming contains column names -->
-            <c:forEach items="${data[0]}" var="columnName">
+            <c:forEach items="${addTableData[0]}" var="columnName">
                 <th>${columnName}</th>
             </c:forEach>
         </tr>
         <!-- Data Rows -->
-        <c:forEach items="${data}" var="dataPunkt" varStatus="loop">
+        <c:forEach items="${addTableData}" var="dataPunkt" varStatus="loop">
             <c:if test="${loop.index != 0}">
                 <tr>
                     <!-- Access specific column values based on their indexes -->

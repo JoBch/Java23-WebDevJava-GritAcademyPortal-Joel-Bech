@@ -33,31 +33,31 @@ public class DeleteFromTablesServlet extends HttpServlet {
         if (whatTableDelete.equals("student")) {
             MySQLConnector.getConnector().insertQuery("deleteFromStudents", id, "I");
             LinkedList<String[]> data = MySQLConnector.getConnector().selectQuery("allFromStudents");
-            req.setAttribute("data", data);
+            req.setAttribute("deleteTableData", data);
             req.getRequestDispatcher("JSP/DeleteFromTable.jsp").forward(req,resp);
 
         }else if (whatTableDelete.equals("teacher")) {
             MySQLConnector.getConnector().insertQuery("deleteFromTeachers", id,"I");
             LinkedList<String[]> data = MySQLConnector.getConnector().selectQuery("allFromTeachers");
-            req.setAttribute("data", data);
+            req.setAttribute("deleteTableData", data);
             req.getRequestDispatcher("JSP/DeleteFromTable.jsp").forward(req,resp);
 
         }else if (whatTableDelete.equals("courses")) {
             MySQLConnector.getConnector().insertQuery("deleteFromCourses", id,"I");
             LinkedList<String[]> data = MySQLConnector.getConnector().selectQuery("allFromCourses");
-            req.setAttribute("data", data);
+            req.setAttribute("deleteTableData", data);
             req.getRequestDispatcher("JSP/DeleteFromTable.jsp").forward(req,resp);
 
         }else if (whatTableDelete.equals("students_courses")) {
             MySQLConnector.getConnector().insertQuery("deleteFromStudentsCourses", id,"I");
             LinkedList<String[]> data = MySQLConnector.getConnector().selectQuery("selectStudentCourses");
-            req.setAttribute("data", data);
+            req.setAttribute("deleteTableData", data);
             req.getRequestDispatcher("JSP/DeleteFromTable.jsp").forward(req,resp);
 
         }else if (whatTableDelete.equals("teachers_courses")) {
             MySQLConnector.getConnector().insertQuery("deleteFromTeachersCourses", id,"I");
             LinkedList<String[]> data = MySQLConnector.getConnector().selectQuery("selectTeacherCourses");
-            req.setAttribute("data", data);
+            req.setAttribute("deleteTableData", data);
             req.getRequestDispatcher("JSP/DeleteFromTable.jsp").forward(req,resp);
         }
     }
