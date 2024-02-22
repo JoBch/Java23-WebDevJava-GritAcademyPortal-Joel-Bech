@@ -26,7 +26,8 @@ Denna delen används för att välja vilket table vi vill visa
     <input type="submit" value="Submit">
 </form>
 <form action="/Add" method="post">
-    <table class="table">
+    <%@include file="ShowTableDataRadio.jsp"%>
+<%--    <table class="table">
         <c:forEach items="${showTableData}" var="dataPunkt" varStatus="loop">
             <c:if test="${loop.index == 0}">
                 <tr>
@@ -45,7 +46,7 @@ Denna delen används för att välja vilket table vi vill visa
                 </tr>
             </c:if>
         </c:forEach>
-    </table>
+    </table>--%>
     <br>
     <table class="table">
         <c:forEach items="${coursesData}" var="dataPunkt" varStatus="loop">
@@ -67,7 +68,6 @@ Denna delen används för att välja vilket table vi vill visa
             </c:if>
         </c:forEach>
     </table>
-
     <br>
     <%--
         Denna delen används för att selecta från vilket table vi vill deleta, kanske sätta ihop med selecten där uppe?

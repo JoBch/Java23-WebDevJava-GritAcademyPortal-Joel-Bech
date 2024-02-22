@@ -26,7 +26,7 @@ public class DeleteFromTablesServlet extends HttpServlet {
 
         resp.setContentType("text/html");
         //retrieving data from loginForm
-        String id = req.getParameter("selectedId");
+        String id = req.getParameter("selectedId1");
         String whatTableDelete = req.getParameter("whatTableDelete");
         System.out.println("id:  " + id);
 
