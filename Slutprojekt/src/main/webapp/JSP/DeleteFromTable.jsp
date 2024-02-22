@@ -24,14 +24,16 @@ Denna delen används för att välja vilket table vi vill visa
     <option value="courses">Courses</option>
     <option value="students_courses">Student Courses</option>
     <option value="teachers_courses">Teacher Courses</option>
+    <input type="hidden" name="hiddenField" value="deleteFromTable">
+
 </select>
     <!-- Add a submit button to submit the selected ID value -->
     <input type="submit" value="Submit">
 </form>
 <form action="/Delete" method="post">
-    <table class="table">
+<%--    <table class="table">
             <!-- Specify the specific column headers you want to include based on their indexes -->
-            <c:forEach items="${showTableData}}" var="columnName" varStatus="loop">
+            <c:forEach items="${showTableData[0]}}" var="columnName" varStatus="loop">
                 <c:if test="${loop.index == 0}">
             <tr>
                 <c:forEach items="${dataPunkt}" var="columnName">
@@ -50,10 +52,32 @@ Denna delen används för att välja vilket table vi vill visa
                 </tr>
             </c:if>
         </c:forEach>
+    </table>--%>
+    <table class="table">
+        <c:forEach items="${showTableData}" var="dataPunkt" varStatus="loop">
+            <c:if test="${loop.index == 0}">
+                <tr>
+                    <c:forEach items="${dataPunkt}" var="columnName">
+                        <th>${columnName}</th>
+                    </c:forEach>
+                    <th>Select</th>
+                </tr>
+            </c:if>
+            <c:if test="${loop.index != 0}">
+                <tr>
+                    <c:forEach items="${dataPunkt}" var="columnValue">
+                        <td>${columnValue}</td>
+                    </c:forEach>
+                    <td><input type="radio" name="selectedId" value="${dataPunkt[0]}"></td>
+                </tr>
+            </c:if>
+        </c:forEach>
     </table>
+    <br>
 <%--
     Denna delen används för att selecta från vilket table vi vill deleta, kanske sätta ihop med selecten där uppe?
 --%>
+    <label for=whatTableDelete>Vilken tabell vill du radera ifrån?</label><br>
     <select id="whatTableDelete" name="whatTableDelete">
         <option value="student">Student</option>
         <option value="teacher">Teacher</option>
@@ -61,8 +85,9 @@ Denna delen används för att välja vilket table vi vill visa
         <option value="students_courses">Student Courses</option>
         <option value="teachers_courses">Teacher Courses</option>
     </select>
+    <br>
     <!-- Add a submit button to submit the selected ID value -->
-    <input type="submit" value="Submit">
+    <input type="submit" value="Delete User">
 </form>
 </body>
 <%@include file="Footer.jsp"%>

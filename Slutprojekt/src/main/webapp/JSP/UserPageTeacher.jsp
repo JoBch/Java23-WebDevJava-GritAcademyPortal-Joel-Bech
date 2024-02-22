@@ -17,7 +17,7 @@
 <h1>Välkommen LÄRARE Grit Academy</h1>
 <h3>${param.message}</h3>
 <table class="table">
-    <c:forEach items="${userBean.data}" var="dataPunkt" varStatus="loop">
+    <c:forEach items="${showTableData}" var="dataPunkt" varStatus="loop">
         <c:if test="${loop.index == 0}">
             <tr>
                 <c:forEach items="${dataPunkt}" var="columnName">
@@ -34,9 +34,15 @@
         </c:if>
     </c:forEach>
 </table>
-<form action="/Attendance" method="post">
+<form action="/Show" method="post">
     First name: <input name="fname" type="text">
     Last name: <input name="lname" type="text">
+        <select id="whatTableShow" name="whatTableShow">
+            <option value="students_coursesWhere">Student Courses</option>
+            <option value="teachers_coursesWhere">Teacher Courses</option>
+            <input type="hidden" name="hiddenField" value="userPageTeacher">
+        </select>
+        <!-- Add a submit button to submit the selected ID value -->
     <input name="showStudents" type="submit">
 </form>
 <%@include file="Footer.jsp"%>

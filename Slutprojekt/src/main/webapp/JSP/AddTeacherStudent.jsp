@@ -39,10 +39,6 @@
         <input class="FormCell" name="town" id="town" type="text"><br>
     </p>
     <p class="ParagraphForm">
-        <label class="FormCell" for=hobby>Hobby</label>
-        <input class="FormCell" name="hobby" id="hobby" type="text"><br>
-    </p>
-    <p class="ParagraphForm">
         <label class="FormCell"  for=email>Email</label>
         <input class="FormCell"  name="email" id="email" type="text"><br>
     </p>

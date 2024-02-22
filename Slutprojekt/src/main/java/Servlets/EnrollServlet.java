@@ -1,4 +1,7 @@
-package Servlets;
+/***
+ TROR INTE VI SKA ANVÄNDA DENNA
+ ***/
+/*package Servlets;
 
 import models.JavaBean;
 import models.MySQLConnector;
@@ -27,4 +30,4 @@ public class EnrollServlet extends HttpServlet {
         JavaBean userBean = (JavaBean) req.getSession().getAttribute("userBean");
         System.out.println("ID: " + userBean.getId() + " UserType: "+ userBean.getUserType() +" StateType: "+userBean.getStateType() +" PrivilegeType: "+ userBean.getprivilegeType());
     }
-}
+}*/

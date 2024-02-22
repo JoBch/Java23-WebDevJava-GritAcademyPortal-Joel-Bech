@@ -1,3 +1,7 @@
+/***
+ TROR INTE VI SKA ANVÄNDA DENNA
+ ***/
+/*
 package Servlets;
 
 import models.JavaBean;
@@ -15,7 +19,7 @@ public class AddCourseServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        req.getRequestDispatcher("JSP/Courses.jsp").forward(req, resp);
+        req.getRequestDispatcher("JSP/AddCourses.jsp").forward(req, resp);
         JavaBean userBean = (JavaBean) req.getSession().getAttribute("userBean");
         System.out.println("ID: " + userBean.getId() + " UserType: "+ userBean.getUserType() +" StateType: "+userBean.getStateType() +" PrivilegeType: "+ userBean.getprivilegeType());
 
@@ -34,3 +38,4 @@ public class AddCourseServlet extends HttpServlet {
 
     }
 }
+*/

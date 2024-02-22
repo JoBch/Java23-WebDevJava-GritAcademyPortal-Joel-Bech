@@ -18,9 +18,9 @@
         </banner>
         <div id="menuLinks">
             <nav class="navBarLinks">
-                <a class="navLink" href="/Attendance">HOME</a>
+                <a class="navLink" href="/UserPageStudent">HOME</a>
             </nav>
-            <a class="navLink" href="/logout"><button style="text-align: center">Logga ut</button></a>
+            <a class="navLink" href="/logout?hiddenParameter=logout"><button style="text-align: center">Logga ut</button></a>
         </div>
     </navbar>
 </div>

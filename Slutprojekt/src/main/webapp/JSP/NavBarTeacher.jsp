@@ -18,13 +18,15 @@
         </banner>
     <div id="menuLinks">
         <nav class="navBarLinks">
-            <a class="navLink" href="/Attendance">HEM</a>
-            <a class="navLink" href="/Courses">ADMIN KURSER</a>
+            <a class="navLink" href="/UserPageTeacher">HEM</a>
+            <a class="navLink" href="/Add?hiddenParameter=courses">ADMIN LÄGG TILL KURSER</a>
+            <a class="navLink" href="/Add?hiddenParameter=stcourses">ADMIN LÄGG TILL ELEV/LÄRARE TILL KURSER</a>
             <a class="navLink" href="/Add">ADMIN LÄGG TILL ELEV/LÄRARE</a>
+            <a class="navLink" href="/Show">VISA ALLA TABLES</a>
             <a class="navLink" href="/Delete">ADMIN TA BORT ELEV/LÄRARE</a>
         </nav>
 
-        <a class="navLink" href="/logout"><form style=text-align:center; action="/logout" method="POST"><input type="submit" id="logout" value="logout"></form></a>
+        <a class="navLink" href="/logout?hiddenParameter=logout"><form style=text-align:center; action="/logout" method="POST"><input type="submit" id="logout" value="logout"></form></a>
     </div>
     </navbar>
 </div>

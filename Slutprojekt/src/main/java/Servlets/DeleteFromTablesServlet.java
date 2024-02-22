@@ -17,14 +17,12 @@ public class DeleteFromTablesServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        req.getRequestDispatcher("JSP/DeleteFromTable.jsp").forward(req,resp);
+        req.getRequestDispatcher("JSP/DeleteFromTable.jsp").forward(req, resp);
         JavaBean userBean = (JavaBean) req.getSession().getAttribute("userBean");
-        System.out.println("ID: " + userBean.getId() + " UserType: "+ userBean.getUserType() +" StateType: "+userBean.getStateType() +" PrivilegeType: "+ userBean.getprivilegeType());
+        System.out.println("ID: " + userBean.getId() + " UserType: " + userBean.getUserType() + " StateType: " + userBean.getStateType() + " PrivilegeType: " + userBean.getprivilegeType());
     }
 
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
-        //req.getRequestDispatcher("JSP/UserPageStudent.jsp").forward(req, resp);
 
         resp.setContentType("text/html");
         //retrieving data from loginForm
@@ -37,31 +35,31 @@ public class DeleteFromTablesServlet extends HttpServlet {
             MySQLConnector.getConnector().insertQuery("deleteFromStudents", id, "I");
             LinkedList<String[]> data = MySQLConnector.getConnector().selectQuery("allFromStudents");
             req.setAttribute("showTableData", data);
-            req.getRequestDispatcher("JSP/DeleteFromTable.jsp").forward(req,resp);
+            req.getRequestDispatcher("JSP/DeleteFromTable.jsp").forward(req, resp);
 
-        }else if (whatTableDelete.equals("teacher")) {
-            MySQLConnector.getConnector().insertQuery("deleteFromTeachers", id,"I");
+        } else if (whatTableDelete.equals("teacher")) {
+            MySQLConnector.getConnector().insertQuery("deleteFromTeachers", id, "I");
             LinkedList<String[]> data = MySQLConnector.getConnector().selectQuery("allFromTeachers");
             req.setAttribute("showTableData", data);
-            req.getRequestDispatcher("JSP/DeleteFromTable.jsp").forward(req,resp);
+            req.getRequestDispatcher("JSP/DeleteFromTable.jsp").forward(req, resp);
 
-        }else if (whatTableDelete.equals("courses")) {
-            MySQLConnector.getConnector().insertQuery("deleteFromCourses", id,"I");
+        } else if (whatTableDelete.equals("courses")) {
+            MySQLConnector.getConnector().insertQuery("deleteFromCourses", id, "I");
             LinkedList<String[]> data = MySQLConnector.getConnector().selectQuery("allFromCourses");
             req.setAttribute("showTableData", data);
-            req.getRequestDispatcher("JSP/DeleteFromTable.jsp").forward(req,resp);
+            req.getRequestDispatcher("JSP/DeleteFromTable.jsp").forward(req, resp);
 
-        }else if (whatTableDelete.equals("students_courses")) {
-            MySQLConnector.getConnector().insertQuery("deleteFromStudentsCourses", id,"I");
+        } else if (whatTableDelete.equals("students_courses")) {
+            MySQLConnector.getConnector().insertQuery("deleteFromStudentsCourses", id, "I");
             LinkedList<String[]> data = MySQLConnector.getConnector().selectQuery("selectStudentCourses");
             req.setAttribute("showTableData", data);
-            req.getRequestDispatcher("JSP/DeleteFromTable.jsp").forward(req,resp);
+            req.getRequestDispatcher("JSP/DeleteFromTable.jsp").forward(req, resp);
 
-        }else if (whatTableDelete.equals("teachers_courses")) {
-            MySQLConnector.getConnector().insertQuery("deleteFromTeachersCourses", id,"I");
+        } else if (whatTableDelete.equals("teachers_courses")) {
+            MySQLConnector.getConnector().insertQuery("deleteFromTeachersCourses", id, "I");
             LinkedList<String[]> data = MySQLConnector.getConnector().selectQuery("selectTeacherCourses");
             req.setAttribute("showTableData", data);
-            req.getRequestDispatcher("JSP/DeleteFromTable.jsp").forward(req,resp);
+            req.getRequestDispatcher("JSP/DeleteFromTable.jsp").forward(req, resp);
         }
     }
 }
