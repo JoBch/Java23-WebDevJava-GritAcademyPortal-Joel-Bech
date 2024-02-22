@@ -27,22 +27,20 @@ Denna delen används för att välja vilket table vi vill visa
 </form>
 <form action="/Add" method="post">
     <table class="table">
-        <!-- Specify the specific column headers you want to include based on their indexes -->
-        <c:forEach items="${showTableData[0]}}" var="columnName" varStatus="loop">
+        <c:forEach items="${showTableData}" var="dataPunkt" varStatus="loop">
             <c:if test="${loop.index == 0}">
                 <tr>
                     <c:forEach items="${dataPunkt}" var="columnName">
                         <th>${columnName}</th>
                     </c:forEach>
+                    <th>Select</th>
                 </tr>
             </c:if>
-        </c:forEach>
-        </tr>
-        <c:forEach items="${showTableData}" var="dataPunkt" varStatus="loop">
             <c:if test="${loop.index != 0}">
                 <tr>
-                    <!-- Access specific column values based on their indexes -->
-                    <td>${dataPunkt[1]}</td><td>${dataPunkt[2]}</td><td>${dataPunkt[4]}</td><td>${dataPunkt[5]}</td>
+                    <c:forEach items="${dataPunkt}" var="columnValue">
+                        <td>${columnValue}</td>
+                    </c:forEach>
                     <td><input type="radio" name="selectedId1" value="${dataPunkt[0]}"></td>
                 </tr>
             </c:if>
@@ -50,26 +48,26 @@ Denna delen används för att välja vilket table vi vill visa
     </table>
     <br>
     <table class="table">
-    <c:forEach items="${coursesData[0]}}" var="columnName" varStatus="loop">
-        <c:if test="${loop.index == 0}">
-            <tr>
-                <c:forEach items="${dataPunkt}" var="columnName">
-                    <th>${columnName}</th>
-                </c:forEach>
-            </tr>
-        </c:if>
-    </c:forEach>
-    </tr>
-    <c:forEach items="${coursesData}" var="dataPunkt" varStatus="loop">
-        <c:if test="${loop.index != 0}">
-            <tr>
-                <!-- Access specific column values based on their indexes -->
-                <td>${dataPunkt[1]}</td><td>${dataPunkt[2]}</td><td>${dataPunkt[3]}</td>
-                <td><input type="radio" name="selectedId2" value="${dataPunkt[0]}"></td>
-            </tr>
-        </c:if>
-    </c:forEach>
+        <c:forEach items="${coursesData}" var="dataPunkt" varStatus="loop">
+            <c:if test="${loop.index == 0}">
+                <tr>
+                    <c:forEach items="${dataPunkt}" var="columnName">
+                        <th>${columnName}</th>
+                    </c:forEach>
+                    <th>Select</th>
+                </tr>
+            </c:if>
+            <c:if test="${loop.index != 0}">
+                <tr>
+                    <c:forEach items="${dataPunkt}" var="columnValue">
+                        <td>${columnValue}</td>
+                    </c:forEach>
+                    <td><input type="radio" name="selectedId2" value="${dataPunkt[0]}"></td>
+                </tr>
+            </c:if>
+        </c:forEach>
     </table>
+
     <br>
     <%--
         Denna delen används för att selecta från vilket table vi vill deleta, kanske sätta ihop med selecten där uppe?

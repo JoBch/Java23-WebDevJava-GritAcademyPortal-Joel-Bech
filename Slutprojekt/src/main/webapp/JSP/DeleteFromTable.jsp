@@ -31,28 +31,6 @@ Denna delen används för att välja vilket table vi vill visa
     <input type="submit" value="Submit">
 </form>
 <form action="/Delete" method="post">
-<%--    <table class="table">
-            <!-- Specify the specific column headers you want to include based on their indexes -->
-            <c:forEach items="${showTableData[0]}}" var="columnName" varStatus="loop">
-                <c:if test="${loop.index == 0}">
-            <tr>
-                <c:forEach items="${dataPunkt}" var="columnName">
-                    <th>${columnName}</th>
-                </c:forEach>
-            </tr>
-            </c:if>
-            </c:forEach>
-        </tr>
-        <c:forEach items="${showTableData}" var="dataPunkt" varStatus="loop">
-            <c:if test="${loop.index != 0}">
-                <tr>
-                    <!-- Access specific column values based on their indexes -->
-                    <td>${dataPunkt[1]}</td><td>${dataPunkt[2]}</td><td>${dataPunkt[4]}</td><td>${dataPunkt[5]}</td>
-                    <td><input type="radio" name="selectedId" value="${dataPunkt[0]}"></td>
-                </tr>
-            </c:if>
-        </c:forEach>
-    </table>--%>
     <table class="table">
         <c:forEach items="${showTableData}" var="dataPunkt" varStatus="loop">
             <c:if test="${loop.index == 0}">
