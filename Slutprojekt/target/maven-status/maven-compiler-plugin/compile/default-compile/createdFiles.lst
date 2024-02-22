@@ -1,11 +1,11 @@
 models\USER_TYPE.class
-Servlets\ShowtablesServlet.class
 Servlets\AddToTablesServlet.class
 Servlets\Index.class
 org\Slutprojekt\JAXRSConfiguration.class
 models\MySQLConnector.class
 Servlets\DeleteFromTablesServlet.class
 org\Slutprojekt\resources\JavaEE8Resource.class
+Servlets\ShowTablesServlet.class
 models\STATE_TYPE.class
 models\PRIVILEGE_TYPE.class
 Servlets\LogoutServlet.class

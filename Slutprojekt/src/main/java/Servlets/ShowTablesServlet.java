@@ -13,7 +13,7 @@ import java.util.LinkedList;
 import java.util.Objects;
 
 @WebServlet("/Show")
-public class ShowtablesServlet extends HttpServlet {
+public class ShowTablesServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)

@@ -23,6 +23,7 @@
                 <c:forEach items="${dataPunkt}" var="columnName">
                     <th>${columnName}</th>
                 </c:forEach>
+                <th>Select</th>
             </tr>
         </c:if>
         <c:if test="${loop.index != 0}">

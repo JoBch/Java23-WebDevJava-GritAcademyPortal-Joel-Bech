@@ -23,9 +23,10 @@ och populerar dem med data därefter.--%>
     <c:forEach items="${loginData}" var="dataPunkt" varStatus="loop">
         <c:if test="${loop.index == 0}">
             <tr>
-                <c:forEach items="${dataPunkt[0]}" var="columnName">
+                <c:forEach items="${dataPunkt}" var="columnName">
                     <th>${columnName}</th>
                 </c:forEach>
+                <th>Select</th>
             </tr>
         </c:if>
         <c:if test="${loop.index != 0}">
