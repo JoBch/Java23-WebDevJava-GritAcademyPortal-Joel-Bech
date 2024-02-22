@@ -18,9 +18,9 @@
         </banner>
         <div id="menuLinks">
             <nav class="navBarLinks">
-                <a class="navLink" href="/UserPageStudent">HOME</a>
+                <a class="navLink" href="/JSP/UserPageStudent.jsp">HOME</a>
             </nav>
-            <a class="navLink" href="/logout?hiddenParameter=logout"><button style="text-align: center">Logga ut</button></a>
+            <a class="navLink" href="/logout?hiddenParameter=logout"><form style=text-align:center; action="/logout" method="POST"><input type="submit" id="logout" value="logout"></form></a>
         </div>
     </navbar>
 </div>

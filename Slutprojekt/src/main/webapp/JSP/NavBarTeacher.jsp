@@ -18,7 +18,7 @@
         </banner>
     <div id="menuLinks">
         <nav class="navBarLinks">
-            <a class="navLink" href="/UserPageTeacher">HEM</a>
+            <a class="navLink" href="/JSP/UserPageTeacher.jsp">HEM</a>
             <a class="navLink" href="/Add?hiddenParameter=courses">ADMIN LÄGG TILL KURSER</a>
             <a class="navLink" href="/Add?hiddenParameter=stcourses">ADMIN LÄGG TILL ELEV/LÄRARE TILL KURSER</a>
             <a class="navLink" href="/Add">ADMIN LÄGG TILL ELEV/LÄRARE</a>
