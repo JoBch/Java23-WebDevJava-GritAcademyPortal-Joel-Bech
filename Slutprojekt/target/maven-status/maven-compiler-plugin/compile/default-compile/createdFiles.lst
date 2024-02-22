@@ -1,5 +1,4 @@
 models\USER_TYPE.class
-Servlets\AttendanceServlet.class
 Servlets\ShowtablesServlet.class
 Servlets\AddToTablesServlet.class
 Servlets\Index.class

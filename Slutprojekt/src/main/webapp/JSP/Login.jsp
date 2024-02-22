@@ -9,8 +9,9 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
+    <link rel="stylesheet" href="../CSS/Style.css">
     <title>Logga in Grit Academy Portal</title>
-    <link rel="stylesheet" href="../CSS/Style.css"></head>
+</head>
 <body>
 <%@include file="NavbarInlogg.jsp"%>
 <h1>Hello User!</h1>
@@ -44,6 +45,7 @@
         </c:if>
     </c:forEach>
 </table>
-</body>
 <%@include file="Footer.jsp"%>
+</body>
+
 </html>
