@@ -22,12 +22,11 @@ public class AddToTablesServlet extends HttpServlet {
             LinkedList<String[]> data = MySQLConnector.getConnector().selectQuery("allFromCourses");
             req.setAttribute("coursesData", data);
             req.getRequestDispatcher("/JSP/AddToLookupTable.jsp").forward(req, resp);
-        }else if (Objects.equals(addWhat, "courses")){
+        } else if (Objects.equals(addWhat, "courses")) {
             req.getRequestDispatcher("JSP/AddCourses.jsp").forward(req, resp);
-        }else{
+        } else {
             req.getRequestDispatcher("JSP/AddTeacherStudent.jsp").forward(req, resp);
         }
-
     }
 
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

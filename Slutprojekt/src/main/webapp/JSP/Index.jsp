@@ -11,9 +11,10 @@
 <head>
     <title>Grit Academy Portal</title>
     <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
-    <link href="/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="../CSS/Style.css">
+    <link rel="stylesheet" media="screen" href="https://fontlibrary.org//face/lato" type="text/css"/>
 </head>
-<%@include file="NavbarStudent.jsp"%>
+<%@include file="NavbarStudent.jsp" %>
 <body class="body">
 
 <h1>Hello User!</h1>

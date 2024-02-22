@@ -11,21 +11,23 @@
 <head>
     <title>Lägg till ny kurs</title>
     <link rel="stylesheet" href="../CSS/Style.css">
-    <%@include file="NavBarTeacher.jsp"%>
+    <link rel="stylesheet" media="screen" href="https://fontlibrary.org//face/lato" type="text/css"/>
+    <%@include file="NavBarTeacher.jsp" %>
 </head>
 <body>
 
-
-<form class="AddForm" action=/Add method=POST>
-    <label for="name">Skriv in kursens namn:</label><br>
-    <input type=text id=name name=name required><br>
-    <label for=yhp>Skriv in Yrkeshögskolepoäng:</label><br>
-    <input type=text id=YHP name=YHP required><br>
-    <label for=description>Vad innehåller kursen?</label><br>
-    <input type=text id=description name=description required><br>
-    <input type="hidden" name="whatTable" value="courses">
-    <input type=submit value=Submit>
-</form>
+<div style="text-align: center; padding-top: 25px">
+    <form class="AddForm" action=/Add method=POST>
+        <label for="name">Skriv in kursens namn:</label><br>
+        <input type=text id=name name=name required><br>
+        <label for=yhp>Skriv in Yrkeshögskolepoäng:</label><br>
+        <input type=text id=YHP name=YHP required><br>
+        <label for=description>Vad innehåller kursen?</label><br>
+        <input type=text id=description name=description required><br>
+        <input type="hidden" name="whatTable" value="courses">
+        <input type=submit value=Submit>
+    </form>
+</div>
 <table class="table">
     <c:forEach items="${addTableData}" var="dataPunkt" varStatus="loop">
         <c:if test="${loop.index == 0}">
@@ -45,5 +47,5 @@
     </c:forEach>
 </table>
 </body>
-<%@include file="Footer.jsp"%>
+<%@include file="Footer.jsp" %>
 </html>

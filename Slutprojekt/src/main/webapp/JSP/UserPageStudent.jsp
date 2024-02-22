@@ -11,8 +11,9 @@
 <html>
 <head>
     <title>Välkommen Student</title>
-    <%@include file="NavbarStudent.jsp"%>
+    <%@include file="NavbarStudent.jsp" %>
     <link rel="stylesheet" href="../CSS/Style.css">
+    <link rel="stylesheet" media="screen" href="https://fontlibrary.org//face/lato" type="text/css"/>
 </head>
 <%--Denna biten är lite magisk och jag förstår mig inte riktigt på den men den är cool som fan. Skapar dynamiskt ALLA headers till vårt table
 och populerar dem med data därefter.--%>
@@ -38,6 +39,6 @@ och populerar dem med data därefter.--%>
         </c:if>
     </c:forEach>
 </table>
-<%@include file="Footer.jsp"%>
+<%@include file="Footer.jsp" %>
 </body>
 </html>

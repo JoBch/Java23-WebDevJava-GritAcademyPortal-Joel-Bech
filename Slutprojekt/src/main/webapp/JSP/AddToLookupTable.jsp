@@ -10,10 +10,12 @@
 <html>
 <head>
     <title>Ta bort student/lärare/kurs</title>
-    <link rel="stylesheet" href="../CSS/Style.css"></head>
+    <link rel="stylesheet" href="../CSS/Style.css">
+    <link rel="stylesheet" media="screen" href="https://fontlibrary.org//face/lato" type="text/css"/>
+</head>
 <body>
-<%@include file="NavBarTeacher.jsp"%>
-<h5>Choose either student or teacher table and then click the radio buttons for the user you want to add to a respective course..</h5>
+<%@include file="NavBarTeacher.jsp" %>
+<h5>Välj först student/teacher tabell, klicka därefter i den användare du vill lägga till för en kurs</h5>
 <%--
 Denna delen används för att välja vilket table vi vill visa
 --%>
@@ -23,35 +25,15 @@ Denna delen används för att välja vilket table vi vill visa
         <option value="teacher">Teacher</option>
         <input type="hidden" name="hiddenField" value="lookupTable">
     </select>
-    <input type="submit" value="Submit">
+    <input type="submit" value="KÖR">
 </form>
 <form action="/Add" method="post">
-    <%@include file="ShowTableDataRadio.jsp"%>
-<%--    <table class="table">
-        <c:forEach items="${showTableData}" var="dataPunkt" varStatus="loop">
-            <c:if test="${loop.index == 0}">
-                <tr>
-                    <c:forEach items="${dataPunkt}" var="columnName">
-                        <th>${columnName}</th>
-                    </c:forEach>
-                    <th>Select</th>
-                </tr>
-            </c:if>
-            <c:if test="${loop.index != 0}">
-                <tr>
-                    <c:forEach items="${dataPunkt}" var="columnValue">
-                        <td>${columnValue}</td>
-                    </c:forEach>
-                    <td><input type="radio" name="selectedId1" value="${dataPunkt[0]}"></td>
-                </tr>
-            </c:if>
-        </c:forEach>
-    </table>--%>
+    <%@include file="ShowTableDataRadio.jsp" %>
     <br>
     <table class="table">
         <c:forEach items="${coursesData}" var="dataPunkt" varStatus="loop">
             <c:if test="${loop.index == 0}">
-                <tr>
+                <tr id="tableRowHeader">
                     <c:forEach items="${dataPunkt}" var="columnName">
                         <th>${columnName}</th>
                     </c:forEach>
@@ -59,7 +41,7 @@ Denna delen används för att välja vilket table vi vill visa
                 </tr>
             </c:if>
             <c:if test="${loop.index != 0}">
-                <tr>
+                <tr id="tableRowData">
                     <c:forEach items="${dataPunkt}" var="columnValue">
                         <td>${columnValue}</td>
                     </c:forEach>
@@ -96,11 +78,15 @@ Denna delen används för att välja vilket table vi vill visa
         <c:if test="${loop.index != 0}">
             <tr>
                 <!-- Access specific column values based on their indexes -->
-                <td>${dataPunkt[0]}</td><td>${dataPunkt[1]}</td><td>${dataPunkt[2]}</td><td>${dataPunkt[3]}</td><td>${dataPunkt[4]}</td>
+                <td>${dataPunkt[0]}</td>
+                <td>${dataPunkt[1]}</td>
+                <td>${dataPunkt[2]}</td>
+                <td>${dataPunkt[3]}</td>
+                <td>${dataPunkt[4]}</td>
             </tr>
         </c:if>
     </c:forEach>
 </table>
 </body>
-<%@include file="Footer.jsp"%>
+<%@include file="Footer.jsp" %>
 </html>

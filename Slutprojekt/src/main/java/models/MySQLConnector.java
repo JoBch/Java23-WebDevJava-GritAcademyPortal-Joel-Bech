@@ -16,7 +16,10 @@ public class MySQLConnector {
     final private String queriesPath = "src/main/java/models/queries.csv";
     private static MySQLConnector connector = null;
 
-    private MySQLConnector(){};
+    private MySQLConnector() {
+    }
+
+    ;
 
     public static MySQLConnector getConnector() {
         if (connector == null) {
@@ -28,20 +31,21 @@ public class MySQLConnector {
     /**
      * Gets data from the Db, based on the SELECT query
      * Additional conditional variable arguments can be added to the query with {0}, {1} ...
+     *
      * @param queryName String
      * @return LinkedList with data String Arrays
      */
-    public LinkedList<String[]> selectQuery(String queryName, String... args) throws NullPointerException{
-        try(BufferedReader br = new BufferedReader(new FileReader(queriesPath))) {
+    public LinkedList<String[]> selectQuery(String queryName, String... args) throws NullPointerException {
+        try (BufferedReader br = new BufferedReader(new FileReader(queriesPath))) {
             String query = br.readLine();
             String[] line = null;
-            while (query != null){
+            while (query != null) {
                 line = query.trim().split(";");
-                if(line[0].equals(queryName)){
+                if (line[0].equals(queryName)) {
                     for (int i = 0; i < args.length; i++) {
-                        line[1] = line[1].replace("{"+i+"}",args[i]) ;
+                        line[1] = line[1].replace("{" + i + "}", args[i]);
                     }
-                    System.out.println("Executing query: "+queryName +" - "+ line[1]);
+                    System.out.println("Executing query: " + queryName + " - " + line[1]);
                     return select(line[1], line[2], line[3], line[4], line[5], line[6]);
                 }
                 query = br.readLine();
@@ -53,13 +57,13 @@ public class MySQLConnector {
     }
 
 
-
     /**
      * Returns a list of String Arrays with data rows recieved from Db.
      * Each datapoint has type of String or null if missing.
+     *
      * @param query String
      */
-    private LinkedList<String[]> select(String query, String db, String ip, String port, String user, String password){
+    private LinkedList<String[]> select(String query, String db, String ip, String port, String user, String password) {
         LinkedList<String[]> queryReturn = new LinkedList<String[]>();
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
@@ -72,15 +76,15 @@ public class MySQLConnector {
             //add header row to queryReturn
             String[] headerRow = new String[columnCount];
             for (int i = 1; i <= columnCount; i++) {
-                headerRow[i-1] = md.getColumnName(i);
+                headerRow[i - 1] = md.getColumnName(i);
             }
             queryReturn.add(headerRow);
 
             //add data row to queryReturn
-            while (rs.next()){
+            while (rs.next()) {
                 String[] dataRow = new String[columnCount];
                 for (int i = 1; i <= columnCount; i++) {
-                    dataRow[i-1] = rs.getString(i);
+                    dataRow[i - 1] = rs.getString(i);
                 }
                 queryReturn.add(dataRow);
             }
@@ -102,13 +106,13 @@ public class MySQLConnector {
      * @param args
      * @throws NullPointerException
      */
-    public void insertQuery(String queryName, String... args) throws NullPointerException{
-        try(BufferedReader br = new BufferedReader(new FileReader(queriesPath))) {
+    public void insertQuery(String queryName, String... args) throws NullPointerException {
+        try (BufferedReader br = new BufferedReader(new FileReader(queriesPath))) {
             String query = br.readLine();
             String[] line = null;
-            while (query != null){
+            while (query != null) {
                 line = query.trim().split(";");
-                if(line[0].equals(queryName)){
+                if (line[0].equals(queryName)) {
                     insert(line[1], line[2], line[3], line[4], line[5], line[6], args);
                     return;
                 }
@@ -118,20 +122,21 @@ public class MySQLConnector {
             throw new RuntimeException(e);
         }
     }
-    private boolean insert(String query, String db, String ip, String port, String user, String password, String... args){
+
+    private boolean insert(String query, String db, String ip, String port, String user, String password, String... args) {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             Connection con = DriverManager.getConnection("jdbc:mysql://" + ip + ":" + port + "/" + db, user, password);
 
             PreparedStatement ps = con.prepareStatement(query);
 
-            for (int i = 0; i < args.length/2; i++) {
+            for (int i = 0; i < args.length / 2; i++) {
                 System.out.println(i);
                 //if(args[i].equals("")) continue;
-                if(args[i+(args.length/2)].equals("S")){
-                    ps.setString(i+1,args[i]);
-                }else if(args[i+(args.length/2)].equals("I")){
-                    ps.setInt(i+1,Integer.parseInt(args[i]));
+                if (args[i + (args.length / 2)].equals("S")) {
+                    ps.setString(i + 1, args[i]);
+                } else if (args[i + (args.length / 2)].equals("I")) {
+                    ps.setInt(i + 1, Integer.parseInt(args[i]));
                 }
             }
 

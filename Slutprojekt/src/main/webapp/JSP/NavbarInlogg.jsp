@@ -7,6 +7,7 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <link rel="stylesheet" href="../CSS/Navbar.css">
+<link rel="stylesheet" media="screen" href="https://fontlibrary.org//face/lato" type="text/css"/>
 
 <div class="mainNavbar">
     <navbar>
@@ -16,7 +17,7 @@
 
             <!-- Vill vi få in namnet på den inloggade här i navbar titel kanske?-->
         </banner>
-            <h2 id="NavInlogg">Vänligen logga in här nedan</h2>
+        <h2 id="NavInlogg">Vänligen logga in här nedan</h2>
 
     </navbar>
 </div>

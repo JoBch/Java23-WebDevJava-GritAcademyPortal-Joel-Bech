@@ -7,6 +7,7 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <link rel="stylesheet" href="../CSS/Navbar.css">
+<link rel="stylesheet" media="screen" href="https://fontlibrary.org//face/lato" type="text/css"/>
 
 <div class="mainNavbar">
     <navbar>
@@ -20,7 +21,10 @@
             <nav class="navBarLinks">
                 <a class="navLink" href="/JSP/UserPageStudent.jsp">HOME</a>
             </nav>
-            <a class="navLink" href="/logout?hiddenParameter=logout"><form style=text-align:center; action="/logout" method="POST"><input type="submit" id="logout" value="logout"></form></a>
+            <a class="navLink" href="/logout?hiddenParameter=logout">
+                <form style=text-align:center; action="/logout" method="POST"><input type="submit" id="logout"
+                                                                                     value="Logga ut"></form>
+            </a>
         </div>
     </navbar>
 </div>

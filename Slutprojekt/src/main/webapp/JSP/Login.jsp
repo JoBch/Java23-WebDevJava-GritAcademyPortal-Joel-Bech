@@ -10,17 +10,18 @@
 <html>
 <head>
     <link rel="stylesheet" href="../CSS/Style.css">
+    <link rel="stylesheet" media="screen" href="https://fontlibrary.org//face/lato" type="text/css"/>
     <title>Logga in Grit Academy Portal</title>
 </head>
 <body>
-<%@include file="NavbarInlogg.jsp"%>
-<h1>Hello User!</h1>
-<h5>Please log in to the database to be able to display the information in the tables.</h5>
+<%@include file="NavbarInlogg.jsp" %>
+<h1>Hallå du</h1>
+<h5>Välkommen till Grit Portalen, det enda du behöver gällande Grit Academy</h5>
 <form action="/login" method="post">
     Username: <input name="username" type="text">
     <br>
     Password: <input name="password" type="password"><br><br>
-    <label for="user_type">Choose a user type:</label>
+    <label for="user_type">Lärare eller elev som loggar in?</label>
     <select id="user_type" name="user_type">
         <option value="student">Student</option>
         <option value="teacher">Teacher</option>
@@ -45,7 +46,7 @@
         </c:if>
     </c:forEach>
 </table>
-<%@include file="Footer.jsp"%>
+<%@include file="Footer.jsp" %>
 </body>
 
 </html>

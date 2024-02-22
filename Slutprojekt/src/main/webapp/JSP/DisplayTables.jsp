@@ -9,16 +9,15 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <link rel="stylesheet" href="../CSS/Style.css"></head>
+    <link rel="stylesheet" href="../CSS/Style.css">
     <title>Visa studenter</title>
+    <link rel="stylesheet" media="screen" href="https://fontlibrary.org//face/lato" type="text/css"/>
 </head>
-<!--Denna biten är lite magisk men den är ännu coolare som fan. Skapar dynamiskt headers som vi väljer till vårt table och populerar dem.
-Alltså baserat på svaret vi från DB så plockar den ut headers, av dessa kan vi välja vilka headerindex vi vill använda dynamiskt
-och sen dynamiskt fylla dessa. Egentligen ganska likt första utgåvan i detta dokumentet men coolare. Kanske om vi behöver
-plocka ut column 1,2,3,4 ur 3 olika tables men de har olika headers så funkar denna ändå.-->
+
+</head>
 <body>
-<%@include file="NavBarTeacher.jsp"%>
-<h1>Hello World from Show Students!</h1>
+<%@include file="NavBarTeacher.jsp" %>
+<h2>Välj vilken tabell du vill titta på</h2>
 <h3>${param.message}</h3>
 <form action="/Show" method="post">
     <select id="whatTableShow" name="whatTableShow">
@@ -51,6 +50,6 @@ plocka ut column 1,2,3,4 ur 3 olika tables men de har olika headers så funkar d
     </c:forEach>
 </table>
 <br>
-<%@include file="Footer.jsp"%>
+<%@include file="Footer.jsp" %>
 </body>
 </html>
