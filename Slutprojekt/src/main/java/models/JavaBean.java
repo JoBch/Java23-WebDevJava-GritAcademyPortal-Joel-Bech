@@ -12,38 +12,34 @@ public class JavaBean implements Serializable {
     private List<String[]> data = null;
 
 
-    public JavaBean(String id, USER_TYPE userType, PRIVILEGE_TYPE privilegeType, STATE_TYPE stateType){
-            this.id=id;
-            this.userType=userType;
-            this.privilegeType=privilegeType;
-            this.stateType=stateType;
+    public JavaBean(String id, USER_TYPE userType, PRIVILEGE_TYPE privilegeType, STATE_TYPE stateType) {
+        this.id = id;
+        this.userType = userType;
+        this.privilegeType = privilegeType;
+        this.stateType = stateType;
     }
 
-    public JavaBean() {}
+    public JavaBean() {
+    }
 
     public List<String[]> getData() {
         return data;
     }
+
     public void setData(List<String[]> data) {
         this.data = data;
+    }
+
+    public String getId() {
+        return id;
     }
 
     public void setId(String id) {
         this.id = id;
     }
-    public String getId() {
-        return id;
-    }
-    public void setStateType(STATE_TYPE stateType) {
-        this.stateType = stateType;
-    }
 
     public void setprivilegeType(PRIVILEGE_TYPE privilegeType) {
         this.privilegeType = privilegeType;
-    }
-
-    public void setUserType(USER_TYPE userType) {
-        this.userType = userType;
     }
 
     public PRIVILEGE_TYPE getprivilegeType() {
@@ -54,8 +50,16 @@ public class JavaBean implements Serializable {
         return stateType;
     }
 
+    public void setStateType(STATE_TYPE stateType) {
+        this.stateType = stateType;
+    }
+
     public USER_TYPE getUserType() {
         return userType;
+    }
+
+    public void setUserType(USER_TYPE userType) {
+        this.userType = userType;
     }
 
 }

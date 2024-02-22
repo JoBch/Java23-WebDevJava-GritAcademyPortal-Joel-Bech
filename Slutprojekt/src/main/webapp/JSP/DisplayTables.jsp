@@ -17,6 +17,7 @@ Alltså baserat på svaret vi från DB så plockar den ut headers, av dessa kan 
 och sen dynamiskt fylla dessa. Egentligen ganska likt första utgåvan i detta dokumentet men coolare. Kanske om vi behöver
 plocka ut column 1,2,3,4 ur 3 olika tables men de har olika headers så funkar denna ändå.-->
 <body>
+<%@include file="NavBarTeacher.jsp"%>
 <h1>Hello World from Show Students!</h1>
 <h3>${param.message}</h3>
 <form action="/Show" method="post">
@@ -50,5 +51,6 @@ plocka ut column 1,2,3,4 ur 3 olika tables men de har olika headers så funkar d
     </c:forEach>
 </table>
 <br>
+<%@include file="Footer.jsp"%>
 </body>
 </html>

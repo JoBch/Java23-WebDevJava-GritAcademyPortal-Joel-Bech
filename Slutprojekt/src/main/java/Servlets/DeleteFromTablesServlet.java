@@ -30,36 +30,41 @@ public class DeleteFromTablesServlet extends HttpServlet {
         String whatTableDelete = req.getParameter("whatTableDelete");
         System.out.println("id:  " + id);
 
-        //comparing data with DB student or teacher
-        if (whatTableDelete.equals("student")) {
-            MySQLConnector.getConnector().insertQuery("deleteFromStudents", id, "I");
-            LinkedList<String[]> data = MySQLConnector.getConnector().selectQuery("allFromStudents");
-            req.setAttribute("showTableData", data);
-            req.getRequestDispatcher("JSP/DeleteFromTable.jsp").forward(req, resp);
-
-        } else if (whatTableDelete.equals("teacher")) {
-            MySQLConnector.getConnector().insertQuery("deleteFromTeachers", id, "I");
-            LinkedList<String[]> data = MySQLConnector.getConnector().selectQuery("allFromTeachers");
-            req.setAttribute("showTableData", data);
-            req.getRequestDispatcher("JSP/DeleteFromTable.jsp").forward(req, resp);
-
-        } else if (whatTableDelete.equals("courses")) {
-            MySQLConnector.getConnector().insertQuery("deleteFromCourses", id, "I");
-            LinkedList<String[]> data = MySQLConnector.getConnector().selectQuery("allFromCourses");
-            req.setAttribute("showTableData", data);
-            req.getRequestDispatcher("JSP/DeleteFromTable.jsp").forward(req, resp);
-
-        } else if (whatTableDelete.equals("students_courses")) {
-            MySQLConnector.getConnector().insertQuery("deleteFromStudentsCourses", id, "I");
-            LinkedList<String[]> data = MySQLConnector.getConnector().selectQuery("selectStudentCourses");
-            req.setAttribute("showTableData", data);
-            req.getRequestDispatcher("JSP/DeleteFromTable.jsp").forward(req, resp);
-
-        } else if (whatTableDelete.equals("teachers_courses")) {
-            MySQLConnector.getConnector().insertQuery("deleteFromTeachersCourses", id, "I");
-            LinkedList<String[]> data = MySQLConnector.getConnector().selectQuery("selectTeacherCourses");
-            req.setAttribute("showTableData", data);
-            req.getRequestDispatcher("JSP/DeleteFromTable.jsp").forward(req, resp);
+        //comparing whatTable to determine where we want to send the user and what we want to delete
+        switch (whatTableDelete) {
+            case "student":
+                MySQLConnector.getConnector().insertQuery("deleteFromStudents", id, "I");
+                fetchDataAndForward("allFromStudents", req, resp);
+                break;
+            case "teacher":
+                MySQLConnector.getConnector().insertQuery("deleteFromTeachers", id, "I");
+                fetchDataAndForward("allFromteachers", req, resp);
+                break;
+            case "courses":
+                MySQLConnector.getConnector().insertQuery("deleteFromCourses", id, "I");
+                fetchDataAndForward("allFromCourses", req, resp);
+                break;
+            case "students_courses":
+                MySQLConnector.getConnector().insertQuery("deleteFromStudentsCourses", id, "I");
+                fetchDataAndForward("selectStudentCourses", req, resp);
+                break;
+            case "teachers_courses":
+                MySQLConnector.getConnector().insertQuery("deleteFromTeachersCourses", id, "I");
+                fetchDataAndForward("selectTeacherCourses", req, resp);
+                break;
         }
     }
+
+    //Just a small method to fetch the attributes needed to populate the chosen session attribute and then redirect user to correct JSP
+    private void fetchDataAndForward(String queryName, HttpServletRequest req, HttpServletResponse resp) {
+        LinkedList<String[]> data = MySQLConnector.getConnector().selectQuery(queryName);
+        req.setAttribute("showTableData", data);
+        try {
+            req.getRequestDispatcher("JSP/DeleteFromTable.jsp").forward(req, resp);
+        } catch (ServletException | IOException e) {
+            //Handle exception appropriately
+            e.printStackTrace();
+        }
+    }
+
 }

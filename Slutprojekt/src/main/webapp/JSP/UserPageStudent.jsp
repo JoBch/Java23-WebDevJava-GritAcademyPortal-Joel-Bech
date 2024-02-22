@@ -17,10 +17,10 @@
 <%--Denna biten är lite magisk och jag förstår mig inte riktigt på den men den är cool som fan. Skapar dynamiskt ALLA headers till vårt table
 och populerar dem med data därefter.--%>
 <body>
-<h1>Hello World from Show Students!</h1>
+<h1>Välkommen STUDENT Grit Academy</h1>
 <h3>${param.message}</h3>
 <table class="table">
-    <c:forEach items="${userBean.data}" var="dataPunkt" varStatus="loop">
+    <c:forEach items="${loginData}" var="dataPunkt" varStatus="loop">
         <c:if test="${loop.index == 0}">
             <tr>
                 <c:forEach items="${dataPunkt[0]}" var="columnName">

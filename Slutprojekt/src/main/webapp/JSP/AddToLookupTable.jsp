@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="../CSS/Style.css"></head>
 <body>
 <%@include file="NavBarTeacher.jsp"%>
-<h5>Choose what table you would like to delete from.</h5>
+<h5>Choose either student or teacher table and then click the radio buttons for the user you want to add to a respective course..</h5>
 <%--
 Denna delen används för att välja vilket table vi vill visa
 --%>
@@ -50,7 +50,7 @@ Denna delen används för att välja vilket table vi vill visa
     </table>
     <br>
     <table class="table">
-    <c:forEach items="${coursesBean.data[0]}}" var="columnName" varStatus="loop">
+    <c:forEach items="${coursesData[0]}}" var="columnName" varStatus="loop">
         <c:if test="${loop.index == 0}">
             <tr>
                 <c:forEach items="${dataPunkt}" var="columnName">
@@ -60,7 +60,7 @@ Denna delen används för att välja vilket table vi vill visa
         </c:if>
     </c:forEach>
     </tr>
-    <c:forEach items="${coursesBean.data}" var="dataPunkt" varStatus="loop">
+    <c:forEach items="${coursesData}" var="dataPunkt" varStatus="loop">
         <c:if test="${loop.index != 0}">
             <tr>
                 <!-- Access specific column values based on their indexes -->
@@ -74,7 +74,7 @@ Denna delen används för att välja vilket table vi vill visa
     <%--
         Denna delen används för att selecta från vilket table vi vill deleta, kanske sätta ihop med selecten där uppe?
     --%>
-    <label for=whatTable>Vilken tabell vill du radera ifrån?</label><br>
+    <label for=whatTable>Vilken tabell vill du lägga till en kurs i?</label><br>
     <select id="whatTable" name="whatTable">
         <option value="students_courses">Student Courses</option>
         <option value="teachers_courses">Teacher Courses</option>

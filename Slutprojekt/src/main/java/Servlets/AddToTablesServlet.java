@@ -1,6 +1,5 @@
 package Servlets;
 
-import models.JavaBean;
 import models.MySQLConnector;
 
 import javax.servlet.ServletException;
@@ -19,23 +18,19 @@ public class AddToTablesServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
         String addWhat = req.getParameter("hiddenParameter");
-        if (Objects.equals(addWhat, "courses")) {
+        if (Objects.equals(addWhat, "stcourses")) {
+            LinkedList<String[]> data = MySQLConnector.getConnector().selectQuery("allFromCourses");
+            req.setAttribute("coursesData", data);
+            req.getRequestDispatcher("/JSP/AddToLookupTable.jsp").forward(req, resp);
+        }else if (Objects.equals(addWhat, "courses")){
             req.getRequestDispatcher("JSP/AddCourses.jsp").forward(req, resp);
-        } else if (Objects.equals(addWhat, "stcourses")) {
-            req.getRequestDispatcher("JSP/AddToLookupTable.jsp").forward(req, resp);
-        } else {
+        }else{
             req.getRequestDispatcher("JSP/AddTeacherStudent.jsp").forward(req, resp);
         }
-
-        JavaBean userBean = (JavaBean) req.getSession().getAttribute("userBean");
-        System.out.println("ID: " + userBean.getId() + " UserType: " + userBean.getUserType() + " StateType: " + userBean.getStateType() + " PrivilegeType: " + userBean.getprivilegeType());
 
     }
 
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        JavaBean userBean = (JavaBean) req.getSession().getAttribute("userBean");
-        System.out.println("ID: " + userBean.getId() + " UserType: " + userBean.getUserType() + " StateType: " + userBean.getStateType() + " PrivilegeType: " + userBean.getprivilegeType());
-
         resp.setContentType("text/html");
         //retrieving data from loginForm
         String fname = req.getParameter("fname");
@@ -51,39 +46,44 @@ public class AddToTablesServlet extends HttpServlet {
         String id1 = req.getParameter("selectedId1");
         String id2 = req.getParameter("selectedId2");
         String whatTable = req.getParameter("whatTable");
+        //Deciding what insert to do with the help of whatTable
+        switch (whatTable) {
+            case "student":
+                MySQLConnector.getConnector().insertQuery("insertIntoStudents", fname, lname, town, email, phone, username, password, "S", "S", "S", "S", "S", "S", "S");
+                selectQueryAndForward("allFromStudents", "JSP/AddTeacherStudent.jsp", req, resp);
 
-        System.out.println(whatTable + "     " + fname + "   " + lname + "    " + username);
+                break;
+            case "teacher":
+                MySQLConnector.getConnector().insertQuery("insertIntoTeachers", fname, lname, town, email, phone, username, password, "S", "S", "S", "S", "S", "S", "S");
+                selectQueryAndForward("allFromTeachers", "JSP/AddTeacherStudent.jsp", req, resp);
 
-        //comparing data with DB student or teacher
-        if (whatTable.equals("student")) {
-            MySQLConnector.getConnector().insertQuery("insertIntoStudents", fname, lname, town, email, phone, username, password, "S", "S", "S", "S", "S", "S", "S");
-            LinkedList<String[]> data = MySQLConnector.getConnector().selectQuery("allFromStudents");
-            req.setAttribute("addTableData", data);
-            req.getRequestDispatcher("JSP/AddTeacherStudent.jsp").forward(req, resp);
+                break;
+            case "courses":
+                MySQLConnector.getConnector().insertQuery("insertIntoCourses", name, YHP, description, "S", "I", "S");
+                selectQueryAndForward("allFromCourses", "JSP/AddCourses.jsp", req, resp);
 
-        } else if (whatTable.equals("teacher")) {
-            MySQLConnector.getConnector().insertQuery("insertIntoTeachers", fname, lname, town, email, phone, username, password, "S", "S", "S", "S", "S", "S", "S");
-            LinkedList<String[]> data = MySQLConnector.getConnector().selectQuery("allFromTeachers");
-            req.setAttribute("addTableData", data);
-            req.getRequestDispatcher("JSP/AddTeacherStudent.jsp").forward(req, resp);
+                break;
+            case "students_courses":
+                MySQLConnector.getConnector().insertQuery("insertIntoStudentsCourses", id1, id2, "I", "I");
+                selectQueryAndForward("selectStudentsCourses", "JSP/AddToLookupTable.jsp", req, resp);
 
-        } else if (whatTable.equals("courses")) {
-            MySQLConnector.getConnector().insertQuery("insertIntoCourses", name, YHP, description, "S", "I", "S");
-            LinkedList<String[]> data = MySQLConnector.getConnector().selectQuery("allFromCourses");
-            req.setAttribute("addTableData", data);
-            req.getRequestDispatcher("JSP/AddCourses.jsp").forward(req, resp);
+                break;
+            case "teachers_courses":
+                MySQLConnector.getConnector().insertQuery("insertIntoTeachersCourses", id1, id2, "I", "I");
+                selectQueryAndForward("selectTeachersCourses", "JSP/AddToLookupTable.jsp", req, resp);
+                break;
+        }
+    }
 
-        } else if (whatTable.equals("students_courses")) {
-            MySQLConnector.getConnector().insertQuery("insertIntoStudentsCourses", id1, id2, "I", "I");
-            LinkedList<String[]> data = MySQLConnector.getConnector().selectQuery("selectStudentsCourses");
-            req.setAttribute("addTableData", data);
-            req.getRequestDispatcher("JSP/AddToLookupTable.jsp").forward(req, resp);
-
-        } else if (whatTable.equals("teachers_courses")) {
-            MySQLConnector.getConnector().insertQuery("insertIntoTeachersCourses", id1, id2, "I", "I");
-            LinkedList<String[]> data = MySQLConnector.getConnector().selectQuery("selectTeachersCourses");
-            req.setAttribute("addTableData", data);
-            req.getRequestDispatcher("JSP/AddToLookupTable.jsp").forward(req, resp);
+    //Just a small method to fetch the attributes needed to populate the chosen session attribute and then redirect user to correct JSP
+    private void selectQueryAndForward(String queryName, String destinationJSP, HttpServletRequest req, HttpServletResponse resp) {
+        LinkedList<String[]> data = MySQLConnector.getConnector().selectQuery(queryName);
+        req.setAttribute("addTableData", data);
+        try {
+            req.getRequestDispatcher(destinationJSP).forward(req, resp);
+        } catch (ServletException | IOException e) {
+            //Handle exception appropriately
+            e.printStackTrace();
         }
     }
 }
