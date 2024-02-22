@@ -24,7 +24,7 @@
             <a class="navLink" href="/Delete">ADMIN TA BORT ELEV/LÄRARE</a>
         </nav>
 
-        <a class="navLink" href="/logout"><form style=text-align:center; action="/Login.jsp" method="POST"><input type="submit" id="logout" value="Logga ut"></form></a>
+        <a class="navLink" href="/logout"><form style=text-align:center; action="/logout" method="POST"><input type="submit" id="logout" value="logout"></form></a>
     </div>
     </navbar>
 </div>

@@ -16,19 +16,22 @@ public class LogoutServlet  extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse response) throws ServletException, IOException {
         req.getRequestDispatcher("JSP/AddTeacherStudent.jsp").forward(req, response);
+        JavaBean userBean = (JavaBean) req.getSession().getAttribute("userBean");
+        System.out.println("ID: " + userBean.getId() + " UserType: "+ userBean.getUserType() +" StateType: "+userBean.getStateType() +" PrivilegeType: "+ userBean.getprivilegeType());
 
     }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        if(req.getSession().getAttribute("userBean") != null && req.getParameter("logout") != null){
-            System.out.println("Loging out user: " + req.getSession().getAttribute("userBean"));
+        if(req.getSession().getAttribute("userBean") != null /*&& req.getParameter("logout") != null*/){
+            System.out.println("Logging out user: " + req.getSession().getAttribute("userBean"));
             req.getSession().setAttribute("userBean", null);
             req.getSession().setMaxInactiveInterval(0);
+            req.getSession().invalidate();
 
         }
-        System.out.println(req.getParameter("id"));
-        System.out.println(req.getParameter("user_type"));
-        req.getRequestDispatcher("JSP/index.jsp").forward(req, resp);
+        //JavaBean userBean = (JavaBean) req.getSession().getAttribute("userBean");
+        //System.out.println("ID: " + userBean.getId() + " UserType: "+ userBean.getUserType() +" StateType: "+userBean.getStateType() +" PrivilegeType: "+ userBean.getprivilegeType());
+        req.getRequestDispatcher("JSP/Index.jsp").forward(req, resp);
     }
 }

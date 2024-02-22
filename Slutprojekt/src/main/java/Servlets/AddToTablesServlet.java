@@ -17,10 +17,16 @@ public class AddToTablesServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
         req.getRequestDispatcher("JSP/AddTeacherStudent.jsp").forward(req, resp);
+        JavaBean userBean = (JavaBean) req.getSession().getAttribute("userBean");
+        System.out.println("ID: " + userBean.getId() + " UserType: "+ userBean.getUserType() +" StateType: "+userBean.getStateType() +" PrivilegeType: "+ userBean.getprivilegeType());
+
 
     }
 
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        JavaBean userBean = (JavaBean) req.getSession().getAttribute("userBean");
+        System.out.println("ID: " + userBean.getId() + " UserType: "+ userBean.getUserType() +" StateType: "+userBean.getStateType() +" PrivilegeType: "+ userBean.getprivilegeType());
+
 
         resp.setContentType("text/html");
         //retrieving data from loginForm
@@ -44,31 +50,31 @@ public class AddToTablesServlet extends HttpServlet {
         if (whatTable.equals("student")) {
             MySQLConnector.getConnector().insertQuery("insertIntoStudents", fname, lname, town, hobby, email, phone, username, password,"S","S","S","S","S","S","S","S");
             LinkedList<String[]> data = MySQLConnector.getConnector().selectQuery("allFromStudents");
-            req.setAttribute("data", data);
+            req.setAttribute("addTableData", data);
             req.getRequestDispatcher("JSP/AddTeacherStudent.jsp").forward(req,resp);
 
         }else if (whatTable.equals("teacher")) {
             MySQLConnector.getConnector().insertQuery("insertIntoTeachers",fname, lname, town, email, phone, username, password, privilage_type, "S","S","S","S","S","S","S","S");
             LinkedList<String[]> data = MySQLConnector.getConnector().selectQuery("allFromTeachers");
-            req.setAttribute("data", data);
+            req.setAttribute("addTableData", data);
             req.getRequestDispatcher("JSP/AddTeacherStudent.jsp").forward(req,resp);
 
         }else if (whatTable.equals("courses")) {
             MySQLConnector.getConnector().insertQuery("insertIntoCourses", name, YHP, description, "S", "I", "S");
             LinkedList<String[]> data = MySQLConnector.getConnector().selectQuery("allFromCourses");
-            req.setAttribute("data", data);
+            req.setAttribute("addTableData", data);
             req.getRequestDispatcher("JSP/AddTeacherStudent.jsp").forward(req,resp);
 
         }else if (whatTable.equals("students_courses")) {
             MySQLConnector.getConnector().insertQuery("insertIntoStudentsCourses", fname, lname, name, "S", "S", "S");
             LinkedList<String[]> data = MySQLConnector.getConnector().selectQuery("selectStudentCourses");
-            req.setAttribute("data", data);
+            req.setAttribute("addTableData", data);
             req.getRequestDispatcher("JSP/AddTeacherStudent.jsp").forward(req,resp);
 
         }else if (whatTable.equals("teachers_courses")) {
             MySQLConnector.getConnector().selectQuery("insertIntoTeachersCourses", fname, lname, name, "S", "S", "S");
             LinkedList<String[]> data = MySQLConnector.getConnector().selectQuery("allFromStudents");
-            req.setAttribute("data", data);
+            req.setAttribute("addTableData", data);
             req.getRequestDispatcher("JSP/AddTeacherStudent.jsp").forward(req,resp);
         }
     }
