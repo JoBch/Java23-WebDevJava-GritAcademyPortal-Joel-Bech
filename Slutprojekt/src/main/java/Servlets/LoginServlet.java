@@ -62,6 +62,8 @@ public class LoginServlet extends HttpServlet {
             } else {//Maybe put down some sort of errormessage aswell?
                 req.getRequestDispatcher("JSP/Login.jsp").forward(req, resp);
             }
+        }else {
+            req.getRequestDispatcher("JSP/Login.jsp").forward(req, resp);
         }
     }
 
