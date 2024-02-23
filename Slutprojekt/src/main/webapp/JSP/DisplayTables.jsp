@@ -29,7 +29,7 @@
     </select>
     <!-- Add a submit button to submit the selected ID value -->
     <input type="hidden" name="hiddenField" value="displayTables">
-    <input type="submit" value="Show Table">
+    <input type="submit" value="Visa">
 </form>
 <table class="table">
     <c:forEach items="${showTableData}" var="dataPunkt" varStatus="loop">

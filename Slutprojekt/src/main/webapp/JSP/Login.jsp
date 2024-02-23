@@ -26,7 +26,7 @@
         <option value="student">Student</option>
         <option value="teacher">Teacher</option>
     </select>
-    <input name="login" type="submit">
+    <input name="login" type="submit" value="Logga in">
 </form>
 <table class="table">
     <c:forEach items="${data}" var="dataPunkt" varStatus="loop">

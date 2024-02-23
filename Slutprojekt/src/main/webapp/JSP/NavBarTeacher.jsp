@@ -24,7 +24,7 @@
                 <a class="navLink" href="/Add">LÄGG TILL ELEV/LÄRARE</a>
                 <a class="navLink" href="/Add?hiddenParameter=stcourses">LÄGG TILL ELEV/LÄRARE TILL KURS</a>
                 <a class="navLink" href="/Show">VISA ALLA TABELLER</a>
-                <a class="navLink" href="/Delete">TA BORT ELEV/LÄRARE</a>
+                <a class="navLink" href="/Delete">RADERA FRÅN TABELL</a>
             </nav>
 
             <a class="navLink" href="/logout?hiddenParameter=logout">

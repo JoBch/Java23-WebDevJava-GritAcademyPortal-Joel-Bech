@@ -3,7 +3,17 @@
   <component name="WebContextManager">
     <option name="state">
       <map>
+        <entry key="file://$PROJECT_DIR$/Slutprojekt/src/main/webapp/JSP/AddTeacherStudent.jsp" value="file://$PROJECT_DIR$/Slutprojekt/src/main/webapp/JSP" />
+        <entry key="file://$PROJECT_DIR$/Slutprojekt/src/main/webapp/JSP/AddToLookupTable.jsp" value="file://$PROJECT_DIR$/Slutprojekt/src/main/webapp/JSP" />
+        <entry key="file://$PROJECT_DIR$/Slutprojekt/src/main/webapp/JSP/DeleteFromTable.jsp" value="file://$PROJECT_DIR$/Slutprojekt/src/main/webapp/JSP" />
         <entry key="file://$PROJECT_DIR$/Slutprojekt/src/main/webapp/JSP/DisplayStudents.jsp" value="file://$PROJECT_DIR$/Slutprojekt/src/main/webapp/JSP" />
+        <entry key="file://$PROJECT_DIR$/Slutprojekt/src/main/webapp/JSP/DisplayTables.jsp" value="file://$PROJECT_DIR$/Slutprojekt/src/main/webapp/JSP" />
+        <entry key="file://$PROJECT_DIR$/Slutprojekt/src/main/webapp/JSP/Footer.jsp" value="file://$PROJECT_DIR$/Slutprojekt/src/main/webapp/JSP" />
+        <entry key="file://$PROJECT_DIR$/Slutprojekt/src/main/webapp/JSP/Index.jsp" value="file://$PROJECT_DIR$/Slutprojekt/src/main/webapp/JSP" />
+        <entry key="file://$PROJECT_DIR$/Slutprojekt/src/main/webapp/JSP/Login.jsp" value="file://$PROJECT_DIR$/Slutprojekt/src/main/webapp/JSP" />
+        <entry key="file://$PROJECT_DIR$/Slutprojekt/src/main/webapp/JSP/NavBarTeacher.jsp" value="file://$PROJECT_DIR$/Slutprojekt/src/main/webapp/JSP" />
+        <entry key="file://$PROJECT_DIR$/Slutprojekt/src/main/webapp/JSP/NavbarInlogg.jsp" value="file://$PROJECT_DIR$/Slutprojekt/src/main/webapp/JSP" />
+        <entry key="file://$PROJECT_DIR$/Slutprojekt/src/main/webapp/JSP/ShowTableDataRadio.jsp" value="file://$PROJECT_DIR$/Slutprojekt/src/main/webapp/JSP" />
       </map>
     </option>
   </component>

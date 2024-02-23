@@ -41,7 +41,6 @@ h2 {
 }
 
 html, body {
-    overflow-y: scroll;
     font-family: 'LatoRegular';
     font-weight: normal;
     font-style: normal;

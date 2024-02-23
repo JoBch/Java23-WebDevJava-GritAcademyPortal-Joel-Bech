@@ -60,7 +60,7 @@ Denna delen används för att välja vilket table vi vill visa
         <option value="teachers_courses">Teacher Courses</option>
     </select>
     <!-- Add a submit button to submit the selected ID value -->
-    <input type="submit" value="Add User">
+    <input type="submit" value="Lägg till">
 </form>
 <br>
 <table class="table">

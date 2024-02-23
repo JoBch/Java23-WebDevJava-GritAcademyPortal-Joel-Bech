@@ -21,7 +21,7 @@
         <label for="name">Skriv in kursens namn:</label><br>
         <input type=text id=name name=name required><br>
         <label for=yhp>Skriv in Yrkeshögskolepoäng:</label><br>
-        <input type=text id=YHP name=YHP required><br>
+        <input type=number id=YHP name=YHP required><br>
         <label for=description>Vad innehåller kursen?</label><br>
         <input type=text id=description name=description required><br>
         <input type="hidden" name="whatTable" value="courses">
