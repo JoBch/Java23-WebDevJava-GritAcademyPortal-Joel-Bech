@@ -14,12 +14,13 @@
     <link rel="stylesheet" href="../CSS/Style.css">
     <link rel="stylesheet" media="screen" href="https://fontlibrary.org//face/lato" type="text/css"/>
 </head>
-<%@include file="NavbarStudent.jsp" %>
+<%@include file="NavbarInlogg.jsp" %>
 <body class="body">
 
-<h1>Hello User!</h1>
-<h5>Please log in to the database to be able to display the information in the tables.</h5>
-<a href="/login">Login</a>
+<h1>Hej och välkommen till GritAcademy!</h1>
+<h5>Vänligen klicka på login för att komma vidare till inloggningssidan!</h5>
+<a href="/login">Logga In</a>
 </body>
+<%@include file="Footer.jsp"%>
 </html>
 

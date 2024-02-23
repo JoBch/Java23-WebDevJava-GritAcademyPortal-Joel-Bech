@@ -63,7 +63,6 @@ public class LoginServlet extends HttpServlet {
                 req.getRequestDispatcher("JSP/Login.jsp").forward(req, resp);
             }
         }
-
     }
 
 }
